@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BoraStone – Badewannen</title>
+  <title>AMBOSTONE – Badewannen</title>
 
   <!-- Fonts -->
   <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
@@ -95,8 +95,8 @@
 
   <header class="header">
     <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="BoraStone Startseite">
-        <span class="brand__wordmark">BORASTONE</span>
+      <a class="brand" href="index.html" aria-label="AMBOSTONE Startseite">
+        <span class="brand__wordmark">AMBOSTONE</span>
         <span class="brand__tagline">LUXURY STONE ATELIER</span>
       </a>
   
@@ -105,7 +105,7 @@
         <a class="nav__link" href="waschbecken.html">WASCHBECKEN</a>
         <a class="nav__link is-active" href="bad.html">BADEWANNEN</a>
         <a class="nav__link" href="fliesen.html">FLIESEN &amp; MEHR</a>
-        <a class="nav__link" href="index.html#atelier">ÜBER BORASTONE</a>
+        <a class="nav__link" href="index.html#atelier">ÜBER AMBOSTONE</a>
       </nav>
   
       <button class="navToggle" type="button" aria-label="Menü öffnen" aria-expanded="false">
@@ -124,7 +124,7 @@
             <a href="waschbecken.html">WASCHBECKEN</a>
             <a class="is-active" href="bad.html">BADEWANNEN</a>
             <a href="fliesen.html">FLIESEN &amp; MEHR</a>
-            <a href="index.html#atelier">ÜBER BORASTONE</a>
+            <a href="index.html#atelier">ÜBER AMBOSTONE</a>
           </nav>
         </div>
       </div>
@@ -335,7 +335,7 @@
                     method="POST">
 
                 <!-- Subject (Formspree akzeptiert _subject) -->
-                <input type="hidden" name="_subject" id="subjectField" value="Anfrage – BoraStone">
+                <input type="hidden" name="_subject" id="subjectField" value="Anfrage – AMBOSTONE">
                 <input type="hidden" name="source" value="Badewannen (Produktdetail)">
 
                 <label class="bt-inquiry__label" for="btMessage">Nachricht</label>
@@ -364,7 +364,7 @@
   <!-- Popup -->
   <div class="bs-popup" id="bsPopup" hidden aria-live="polite" aria-label="Hinweis">
     <div class="bs-popup__card" role="dialog" aria-modal="true">
-      <div class="bs-popup__kicker">BORASTONE</div>
+      <div class="bs-popup__kicker">AMBOSTONE</div>
       <h3 class="bs-popup__title">Danke für Ihre Anfrage</h3>
       <p class="bs-popup__text">Wir haben Ihre Nachricht erhalten und melden uns bald bei Ihnen.</p>
       <button class="bs-popup__close" type="button" id="bsPopupClose">Schließen</button>
@@ -407,7 +407,7 @@
   
         // Produktname aus Detail-Title ziehen
         const productTitle = (document.getElementById('bTitle')?.textContent || '').trim();
-        const subject = productTitle ? `Anfrage: ${productTitle}` : 'Produktanfrage – BoraStone';
+        const subject = productTitle ? `Anfrage: ${productTitle}` : 'Produktanfrage – AMBOSTONE';
         if (subjectField) subjectField.value = subject;
   
         try {
