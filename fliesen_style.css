@@ -5,11 +5,237 @@
   background-color: #070707;
 
   background-image:
-    radial-gradient(1200px 700px at 30% 0%, rgba(0,0,0,.35), rgba(0,0,0,.72)),
-    linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,.82)),
     url("assets/images/bg/onyx_background4.png");
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* =========================
+   Stone Living – dark header overrides (light bg)
+========================= */
+
+/* Header background: same as page background (fixed) so it's seamless,
+   content scrolls behind the header and disappears */
+.page--fliesen .header{
+  background-color: #f0ece6;
+  background-image: url("assets/images/bg/onyx_background4.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+.page--leuchten .header,
+.page--spiegel .header,
+.page--beistelltische .header,
+.page--serviertabletts .header{
+  background-color: #070707;
+  background-image:
+    radial-gradient(1200px 700px at 30% 0%, rgba(0,0,0,.35), rgba(0,0,0,.72)),
+    linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,.82)),
+    url("assets/images/bg/onyx_background4.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+.page--fliesen .brand__wordmark{
+  color: rgba(10,8,6,.88);
+  text-shadow: none;
+}
+.page--fliesen .brand__tagline{
+  color: #8a6830;
+  opacity: 1;
+}
+.page--fliesen .nav,
+.page--fliesen .nav__link{
+  color: rgba(10,8,6,.82);
+  font-weight: 600;
+}
+.page--fliesen .nav__link:hover,
+.page--fliesen .nav__link.is-active{
+  color: rgba(10,8,6,1);
+}
+.page--fliesen .nav__link.is-active::after{
+  background: rgba(10,8,6,.70);
+}
+.page--fliesen .navToggle__lines,
+.page--fliesen .navToggle__lines::before,
+.page--fliesen .navToggle__lines::after{
+  background: rgba(10,8,6,.80);
+}
+
+/* =========================
+   Stone Living page
+========================= */
+.sl{
+  padding-top: 120px;
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 0;
+}
+
+.sl__head{
+  text-align: left;
+  padding-top: 8px;
+  padding-bottom: 20px;
+}
+
+.sl__kicker{
+  font-family: var(--serif);
+  letter-spacing: .28em;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: rgba(200,176,138,.80);
+  margin-bottom: 14px;
+}
+
+.sl__title{
+  margin: 0 0 6px;
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: clamp(18px, 1.8vw, 28px);
+  color: rgba(10,8,6,.88);
+}
+
+.sl__lead{
+  margin: 0 auto;
+  max-width: 60ch;
+  color: rgba(255,255,255,.58);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* ------- Grid ------- */
+.sl__grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+/* ------- Category Card ------- */
+.sl-card{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 22px 24px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.22);
+  background: rgba(0,0,0,.62);
+  backdrop-filter: blur(12px);
+  text-decoration: none;
+  transition: border-color .22s ease, background .22s ease, transform .22s ease;
+}
+
+.sl-card:hover{
+  border-color: rgba(200,176,138,.44);
+  background: rgba(0,0,0,.72);
+  transform: translateY(-3px);
+}
+
+.sl-card__icon{
+  width: 34px;
+  height: 34px;
+  margin-bottom: 10px;
+  color: rgba(200,176,138,.75);
+}
+
+.sl-card__icon svg{
+  width: 100%;
+  height: 100%;
+}
+
+.sl-card__kicker{
+  font-family: var(--serif);
+  letter-spacing: .24em;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: rgba(200,176,138,.65);
+}
+
+.sl-card__title{
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 17px;
+  color: rgba(255,255,255,.92);
+}
+
+.sl-card__sub{
+  margin: 0;
+  color: rgba(255,255,255,.48);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Photo-cover variant for sl-card (e.g. Leuchten) */
+.sl-card__cover{
+  width: calc(100% + 48px);
+  margin: -22px -24px 14px;
+  height: 155px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  flex-shrink: 0;
+}
+.sl-card__cover img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .32s ease;
+}
+.sl-card--img:hover .sl-card__cover img{
+  transform: scale(1.04);
+}
+
+.sl-card__cta{
+  margin-top: auto;
+  padding-top: 12px;
+  font-family: var(--serif);
+  letter-spacing: .18em;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: rgba(200,176,138,.80);
+  transition: color .18s ease;
+}
+
+.sl-card:hover .sl-card__cta{
+  color: rgba(200,176,138,1);
+}
+
+/* ------- Note ------- */
+.sl__note{
+  text-align: center;
+}
+
+.sl__note p{
+  color: rgba(255,255,255,.38);
+  font-size: 13px;
+  letter-spacing: .06em;
+}
+
+/* ------- Responsive ------- */
+@media (max-width: 600px){
+  .sl__grid{
+    grid-template-columns: 1fr 1fr;
+  }
+  .sl-card{
+    padding: 22px 18px 20px;
+  }
+  .sl-card__title{
+    font-size: 15px;
+  }
 }

@@ -66,11 +66,11 @@
 -------------------------- */
 .wb-tabs{
   display: inline-flex;
-  gap: 8px;
-  padding: 5px 7px;
+  gap: 10px;
+  padding: 6px 8px;
   border-radius: 999px;
-  border: 1px solid rgba(200,176,138,.20);
-  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(200,176,138,.28);
+  background: rgba(0,0,0,.22);
   backdrop-filter: blur(10px);
 }
 
@@ -78,23 +78,26 @@
   appearance: none;
   border: 1px solid transparent;
   background: transparent;
-  color: rgba(255,255,255,.70);
+  color: rgba(255,255,255,.68);
   font-family: var(--serif);
   text-transform: uppercase;
-  letter-spacing: .22em;
-  font-size: 10px;
-  padding: 7px 10px;
+  letter-spacing: .20em;
+  font-size: 12px;
+  padding: 11px 22px;
   border-radius: 999px;
   cursor: pointer;
-  transition: background .18s ease, border-color .18s ease, color .18s ease;
+  transition: background .18s ease, border-color .18s ease, color .18s ease, box-shadow .18s ease;
 }
 
-.wb-tabs__btn:hover{ color: rgba(255,255,255,.90); }
+.wb-tabs__btn:hover{ color: rgba(255,255,255,.92); border-color: rgba(200,176,138,.22); }
 
 .wb-tabs__btn.is-active{
-  color: rgba(255,255,255,.92);
-  border-color: rgba(200,176,138,.36);
-  background: rgba(200,176,138,.10);
+  color: rgba(255,255,255,.96);
+  border-color: rgba(200,176,138,.52);
+  background: rgba(200,176,138,.14);
+  box-shadow: 0 0 18px rgba(200,176,138,.10);
+  letter-spacing: .22em;
+  font-size: 12.5px;
 }
 
 /* -------------------------

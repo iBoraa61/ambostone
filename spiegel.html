@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AMBOSTONE – Spiegel</title>
+
+  <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="fliesen_style.css" />
+  <link rel="stylesheet" href="waschbecken_style.css" />
+
+  <style>
+    html { background: #070707; }
+    .page--spiegel {
+      overflow: auto;
+      background-color: #070707;
+      background-image:
+        radial-gradient(1200px 700px at 30% 0%, rgba(0,0,0,.35), rgba(0,0,0,.72)),
+        linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,.82)),
+        url("assets/images/bg/onyx_background4.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      --card-stroke: rgba(200,176,138,.22);
+      --card-beige-2: rgba(46, 36, 28, .72);
+      --card-beige-3: rgba(22, 18, 14, .86);
+    }
+
+    .lk__head { padding: 32px 0 20px; }
+    .lk__breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--serif);
+      letter-spacing: .16em;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: rgba(200,176,138,.75);
+      text-decoration: none;
+      margin-bottom: 18px;
+      transition: color .18s ease;
+    }
+    .lk__breadcrumb:hover { color: rgba(200,176,138,1); }
+    .lk__title {
+      margin: 0 0 6px;
+      font-family: var(--serif);
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: clamp(18px, 1.8vw, 28px);
+      color: rgba(255,255,255,.92);
+    }
+    .lk__sub {
+      margin: 0 0 24px;
+      color: rgba(255,255,255,.50);
+      font-size: 15px;
+    }
+
+    .lk-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      padding-bottom: 60px;
+    }
+    @media (max-width: 1100px) { .lk-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+    @media (max-width: 760px)  { .lk-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+    @media (max-width: 480px)  { .lk-grid { grid-template-columns: 1fr; } }
+
+    .wb { height: auto; min-height: 100vh; padding-top: 110px; }
+    .wb-gridView { height: auto; overflow: visible; }
+    .wb-panel { display: block !important; height: auto; }
+    .wb-detail { position: fixed; inset: 110px 0 0 0; overflow: auto; }
+  </style>
+
+  <style>
+    .bs-popup{ position: fixed; inset: 0; z-index: 5000; display: grid; place-items: center; padding: 24px; background: rgba(0,0,0,.62); backdrop-filter: blur(10px); }
+    .bs-popup[hidden]{ display: none; }
+    .bs-popup__card{ width: min(560px, 92vw); border-radius: 22px; border: 1px solid rgba(200,176,138,.22); background: rgba(0,0,0,.55); box-shadow: 0 30px 90px rgba(0,0,0,.55); padding: 22px 20px; text-align: center; }
+    .bs-popup__kicker{ font-family: var(--serif); letter-spacing: .22em; font-size: 11px; text-transform: uppercase; color: rgba(200,176,138,.92); margin-bottom: 10px; }
+    .bs-popup__title{ margin: 0 0 10px; font-family: var(--serif); font-weight: 500; letter-spacing: .08em; text-transform: uppercase; font-size: 18px; color: rgba(255,255,255,.92); }
+    .bs-popup__text{ margin: 0; color: rgba(255,255,255,.78); line-height: 1.65; font-size: 16px; }
+    .bs-popup__close{ margin-top: 16px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 10px 16px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.18); color: rgba(255,255,255,.90); font-family: var(--serif); letter-spacing: .18em; font-size: 11px; text-transform: uppercase; cursor: pointer; transition: transform .18s ease, border-color .18s ease; }
+    .bs-popup__close:hover{ transform: translateY(-1px); border-color: rgba(200,176,138,.35); }
+  </style>
+</head>
+
+<body class="page page--spiegel" data-page="spiegel">
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="AMBOSTONE Startseite">
+        <span class="brand__wordmark">AMBOSTONE</span>
+        <span class="brand__tagline">LUXURY STONE ATELIER</span>
+      </a>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="nav__link" href="index.html">STARTSEITE</a>
+        <a class="nav__link" href="waschbecken.html">WASCHBECKEN</a>
+        <a class="nav__link" href="bad.html">BADEWANNEN</a>
+        <a class="nav__link is-active" href="fliesen.html">STONE LIVING</a>
+        <a class="nav__link" href="index.html#atelier">ÜBER AMBOSTONE</a>
+      </nav>
+
+      <button class="navToggle" type="button" aria-label="Menü öffnen" aria-expanded="false">
+        <span class="navToggle__lines" aria-hidden="true"></span>
+      </button>
+
+      <div class="navOverlay" id="navOverlay" aria-hidden="true" hidden>
+        <div class="navDrawer" role="dialog" aria-modal="true" aria-label="Navigation">
+          <div class="navDrawer__top">
+            <div class="navDrawer__title">Menü</div>
+            <button class="navClose" id="navClose" type="button" aria-label="Menü schließen">✕</button>
+          </div>
+          <nav class="navMobile" aria-label="Mobile Navigation">
+            <a href="index.html">STARTSEITE</a>
+            <a href="waschbecken.html">WASCHBECKEN</a>
+            <a href="bad.html">BADEWANNEN</a>
+            <a class="is-active" href="fliesen.html">STONE LIVING</a>
+            <a href="index.html#atelier">ÜBER AMBOSTONE</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wb" role="main" aria-label="Spiegel">
+
+    <div class="container lk__head">
+      <a class="lk__breadcrumb" href="fliesen.html">← STONE LIVING</a>
+      <h1 class="lk__title">SPIEGEL</h1>
+      <p class="lk__sub">Mit Marmorfüßen</p>
+    </div>
+
+    <section class="wb-gridView" aria-label="Spiegel Kollektion">
+      <div class="wb-panel is-active" data-panel="spiegel">
+        <div class="container">
+          <div class="lk-grid">
+
+            <!-- Spiegel 1 -->
+            <article class="card"
+              data-type="SPIEGEL"
+              data-title="Spiegel LUNARA Marble"
+              data-price="auf Anfrage"
+              data-desc="Eleganter Standspiegel mit massivem Marmorfuß. Klare Linien, natürliche Materialität – ein Statement für jedes Interieur."
+              data-spec-material="Marmor (Naturstein)"
+              data-spec-size="auf Anfrage"
+              data-spec-finish="poliert"
+              data-spec-lead="auf Anfrage"
+              data-main="assets/images/living/Spiegel/Spiegel1_main.jpg"
+              data-thumb1="assets/images/living/Spiegel/Spiegel1.1.jpg"
+            >
+              <div class="card__media">
+                <img src="assets/images/living/Spiegel/Spiegel1_main.jpg" alt="Spiegel LUNARA mit Marmorfuß">
+              </div>
+              <div class="card__body">
+                <div class="card__kicker">SPIEGEL</div>
+                <h3 class="card__title">Spiegel LUNARA Marble</h3>
+                <div class="card__price">auf Anfrage</div>
+                <div class="card__hint">Details ansehen</div>
+              </div>
+            </article>
+
+            <!-- Spiegel 2 -->
+            <article class="card"
+              data-type="SPIEGEL"
+              data-title="Spiegel CALYX Marble"
+              data-price="auf Anfrage"
+              data-desc="Rundspiegel mit skulpturalem Marmorsockel. Außergewöhnliche Formensprache trifft auf luxuriöse Natursteinpräsenz."
+              data-spec-material="Marmor (Naturstein)"
+              data-spec-size="auf Anfrage"
+              data-spec-finish="poliert"
+              data-spec-lead="auf Anfrage"
+              data-main="assets/images/living/Spiegel/Spiegel2_main.jpeg"
+              data-thumb1="assets/images/living/Spiegel/Spiegel2.1.jpeg"
+              data-thumb2="assets/images/living/Spiegel/Spiegel2.2.jpeg"
+              data-thumb3="assets/images/living/Spiegel/Spiegel2.3.jpeg"
+            >
+              <div class="card__media">
+                <img src="assets/images/living/Spiegel/Spiegel2_main.jpeg" alt="Spiegel CALYX mit Marmorfuß">
+              </div>
+              <div class="card__body">
+                <div class="card__kicker">SPIEGEL</div>
+                <h3 class="card__title">Spiegel CALYX Marble</h3>
+                <div class="card__price">auf Anfrage</div>
+                <div class="card__hint">Details ansehen</div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAIL VIEW -->
+    <section class="wb-detail" aria-label="Produktdetails" hidden>
+      <div class="container wb-detail__inner">
+        <button class="wb-back" type="button" aria-label="Zurück zur Übersicht">← Zur Übersicht</button>
+
+        <div class="wb-detail__kicker" id="dType">SPIEGEL</div>
+        <h2 class="wb-detail__title" id="dTitle">Titel</h2>
+
+        <div class="wb-product">
+          <div class="wb-product__left">
+            <div class="wb-mainImage">
+              <img id="dMain" src="" alt="">
+              <button class="wb-zoom" type="button" aria-label="Bild vergrößern">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M16.6 16.6 21 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="wb-zoomOverlay" id="zoomOverlay" hidden>
+              <button class="wb-zoomOverlay__close" type="button" aria-label="Schließen">✕</button>
+              <img class="wb-zoomOverlay__img" id="zoomImg" src="" alt="">
+            </div>
+          </div>
+
+          <div class="wb-product__right">
+            <div class="wb-gallery" id="dGallery"></div>
+
+            <div class="wb-buy">
+              <div class="wb-price">
+                <span class="wb-price__label">Preis</span>
+                <span class="wb-price__value" id="dPrice">auf Anfrage</span>
+              </div>
+
+              <div class="wb-desc">
+                <div class="wb-desc__title">Beschreibung</div>
+                <p id="dDesc"></p>
+
+                <ul class="wb-specs">
+                  <li><span>Material</span><span id="sMaterial"></span></li>
+                  <li><span>Maße</span><span id="sSize"></span></li>
+                  <li><span>Finish</span><span id="sFinish"></span></li>
+                  <li><span>Lieferzeit</span><span id="sLead"></span></li>
+                </ul>
+              </div>
+
+              <form class="wb-inquiry" id="inquiryForm"
+                    action="https://formspree.io/f/xbdajpba"
+                    method="POST">
+                <input type="hidden" name="_subject" id="subjectField" value="Anfrage – AMBOSTONE Spiegel">
+                <input type="hidden" name="source" value="Stone Living – Spiegel">
+
+                <label class="wb-inquiry__label" for="message">Nachricht</label>
+                <textarea class="wb-field" id="message" name="message" rows="5"
+                  placeholder="Schreiben Sie uns kurz Ihr Projekt, Wunschmaß oder Lieferort…"></textarea>
+
+                <div class="wb-inquiry__row">
+                  <input class="wb-field" type="email" id="email" name="email" placeholder="Ihre E-Mail" required>
+                  <button class="wb-btn wb-btn--gold" type="submit">ANFRAGE SENDEN</button>
+                </div>
+
+                <p class="wb-note">Wir melden uns mit Verfügbarkeit, Lieferzeit und Versandkosten.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="bs-popup" id="bsPopup" hidden aria-live="polite">
+    <div class="bs-popup__card" role="dialog" aria-modal="true">
+      <div class="bs-popup__kicker">AMBOSTONE</div>
+      <h3 class="bs-popup__title">Danke für Ihre Anfrage</h3>
+      <p class="bs-popup__text">Wir haben Ihre Nachricht erhalten und melden uns bald bei Ihnen.</p>
+      <button class="bs-popup__close" type="button" id="bsPopupClose">Schließen</button>
+    </div>
+  </div>
+
+  <script src="spiegel.js"></script>
+
+  <script>
+    (() => {
+      const form = document.getElementById('inquiryForm');
+      const subjectField = document.getElementById('subjectField');
+      const popup = document.getElementById('bsPopup');
+      const popupClose = document.getElementById('bsPopupClose');
+      let popupTimer = null;
+
+      function openPopup() { if (!popup) return; popup.hidden = false; clearTimeout(popupTimer); popupTimer = setTimeout(() => { popup.hidden = true; }, 5600); }
+      function closePopup() { if (!popup) return; popup.hidden = true; clearTimeout(popupTimer); }
+
+      popupClose?.addEventListener('click', closePopup);
+      popup?.addEventListener('click', (e) => { if (e.target === popup) closePopup(); });
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && popup && !popup.hidden) closePopup(); });
+
+      if (!form) return;
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const productTitle = (document.getElementById('dTitle')?.textContent || '').trim();
+        if (subjectField) subjectField.value = productTitle ? `Anfrage: ${productTitle}` : 'Anfrage – Spiegel AMBOSTONE';
+        try {
+          await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+          form.reset();
+          openPopup();
+        } catch { openPopup(); }
+      });
+    })();
+  </script>
+
+</body>
+</html>
