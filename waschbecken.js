@@ -265,12 +265,13 @@
     if (location.search) history.pushState(null, '', location.pathname);
   }
 
-  // Card click (nur innerhalb gridView öffnen)
+  // Card click → neues Fenster öffnen
   document.addEventListener('click', (e) => {
     const card = e.target.closest('.wb-gridView .card');
     if (!card) return;
     if (e.target.closest('.cardsArrow')) return;
-    openDetail(card);
+    const _t = safeStr(card.dataset.title);
+    window.open(location.pathname + (_t ? '?p=' + encodeURIComponent(_t) : ''), '_blank');
   });
 
   backBtn?.addEventListener('click', closeDetail);
@@ -416,6 +417,9 @@
   const _dp = new URLSearchParams(location.search).get('p');
   if (_dp) {
     const _dc = qsa('.card').find(c => safeStr(c.dataset.title) === decodeURIComponent(_dp));
-    if (_dc) openDetail(_dc);
+    if (_dc) {
+      openDetail(_dc);
+      qsa('.cardsArrow').forEach(a => { a.style.display = 'none'; });
+    }
   }
 })();

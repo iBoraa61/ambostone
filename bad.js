@@ -195,18 +195,14 @@
     if (location.search) history.pushState(null, '', location.pathname);
   }
 
-  // ✅ Card click (delegiert) — FIX: NICHT öffnen wenn Detail offen oder wenn Klick in Form/Detail
+  // ✅ Card click → neues Fenster öffnen
   document.addEventListener('click', (e) => {
-    // wenn Detail offen -> niemals Cards öffnen (verhindert Click-through / re-trigger)
-    if (detail && !detail.hidden) return;
-
-    // Sicherheitsnetz: falls irgendwo ein Formular-Klick reinrutscht
     if (e.target.closest('form')) return;
-
     const card = e.target.closest('.bt-gridView .card');
     if (!card) return;
     if (e.target.closest('.cardsArrow')) return;
-    openDetail(card);
+    const _t = safeStr(card.dataset.title || qs('.card__title', card)?.textContent || '');
+    window.open(location.pathname + (_t ? '?p=' + encodeURIComponent(_t) : ''), '_blank');
   });
 
   backBtn?.addEventListener('click', closeDetail);
@@ -326,6 +322,9 @@
   const _dp = new URLSearchParams(location.search).get('p');
   if (_dp) {
     const _dc = qsa('.card').find(c => safeStr(c.dataset.title) === decodeURIComponent(_dp));
-    if (_dc) openDetail(_dc);
+    if (_dc) {
+      openDetail(_dc);
+      qsa('.cardsArrow').forEach(a => { a.style.display = 'none'; });
+    }
   }
 })();
