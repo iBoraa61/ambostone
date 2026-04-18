@@ -39,7 +39,8 @@
     detail.hidden=true; lockBody(false); lastActiveCard?.focus?.();
     if(location.search) history.pushState(null,'',location.pathname);
   }
-  document.addEventListener('click', (e) => { const card = e.target.closest('.wb-gridView .card'); if (!card) return; const _t = safeStr(card.dataset.title); const url = location.pathname + (_t ? '?p=' + encodeURIComponent(_t) : ''); const a = document.createElement('a'); a.href=url; a.target='_blank'; a.rel='noopener'; document.body.appendChild(a); a.click(); document.body.removeChild(a); });
+  // Card click → eigene Produktseite in neuem Tab
+  document.addEventListener('click', (e) => { const card = e.target.closest('.wb-gridView .card'); if (!card) return; const _t = safeStr(card.dataset.title); if (!_t) return; const url = 'produkt.html?src=serviertabletts.html&p=' + encodeURIComponent(_t); const a = document.createElement('a'); a.href=url; a.target='_blank'; a.rel='noopener'; document.body.appendChild(a); a.click(); document.body.removeChild(a); });
   backBtn?.addEventListener('click', closeDetail);
   gallery?.addEventListener('click', (e) => {
     const btn = e.target.closest('.wb-thumb'); if (!btn) return;
