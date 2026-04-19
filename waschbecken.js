@@ -86,8 +86,9 @@
     panels.forEach((p) => p.classList.toggle('is-active', p.dataset.panel === name));
   }
 
-  // Default
-  setTab('stand');
+  // Default: honour #hash (e.g. #wand from homepage link)
+  const hashTab = location.hash.replace('#', '');
+  setTab(hashTab === 'wand' ? 'wand' : 'stand');
 
   tabs.forEach((btn) => {
     btn.addEventListener('click', () => setTab(btn.dataset.tab));
