@@ -11,8 +11,9 @@
    Page background (FIX: wie Badewannen, Mobile-safe)
 ========================= */
 .page--washbecken{
-  height: 100%;
-  overflow: hidden;
+  height: auto;
+  min-height: 100%;
+  overflow: auto;
 
   /* FIX: nicht background: transparent; (shorthand killt image in manchen Fällen) */
   background-color: #070707;
@@ -35,7 +36,8 @@
 }
 
 .wb{
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   padding-top: 120px; /* header height spacing */
 }
 
@@ -110,77 +112,47 @@
 }
 
 /* -------------------------
-   Panels (no page scroll)
+   Panels (scrollable grid)
 -------------------------- */
 .wb-gridView{
-  height: calc(100vh - 120px - 108px);
-  overflow: hidden;
+  height: auto;
+  overflow: visible;
+  padding-bottom: 40px;
 }
 
 .wb-panel{
-  height: 100%;
+  height: auto;
   display: none;
 }
 
 .wb-panel.is-active{ display: block; }
 
 /* =========================
-   4-up pager carousel for cards (DESKTOP/TABLET)
+   Vertical grid (no carousel)
 ========================= */
 .cardsWrap{
   position: relative;
-  height: 100%;
-  overflow: hidden;
+  height: auto;
+  overflow: visible;
 }
 
 .cardsTrack{
-  height: 100%;
-  display: flex;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  transition: transform .35s ease;
-  will-change: transform;
-  padding: 10px 0 60px;
+  transform: none !important;
+  padding: 10px 0 40px;
 }
 
 .cardsPage{
-  flex: 0 0 100%;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
+  display: contents;
 }
 
-/* arrows */
+/* arrows hidden (no carousel) */
 .cardsArrow{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  border: 1px solid rgba(200,176,138,.22);
-  background: rgba(0,0,0,.28);
-  backdrop-filter: blur(10px);
-  color: rgba(255,255,255,.92);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  transition: transform .18s ease, border-color .18s ease, background .18s ease, opacity .18s ease;
-  z-index: 3;
+  display: none;
 }
-
-.cardsArrow:hover{
-  transform: translateY(-50%) translateY(-1px);
-  border-color: rgba(200,176,138,.42);
-  background: rgba(0,0,0,.34);
-}
-
-.cardsArrow:disabled{
-  opacity: .35;
-  cursor: default;
-}
-
-.cardsArrow--prev{ left: -12px; }
-.cardsArrow--next{ right: -12px; }
 
 /* -------------------------
    Card
@@ -586,52 +558,40 @@
    Responsive
 -------------------------- */
 @media (max-width: 1100px){
-  .cardsPage{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cardsTrack{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 900px){
-  .cardsPage{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cardsTrack{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .wb-product{ grid-template-columns: 1fr; }
   .wb-mainImage img{ height: 460px; }
 }
 
-/*  MOBILE: statt Carousel => vertikale Liste + große Karten
-   (Desktop bleibt exakt wie vorher)
-*/
+/*  MOBILE */
 @media (max-width: 640px){
-  /* Seite nicht "einsperren" (sonst fühlt sich Navigation tot an) */
   .page--washbecken{
     overflow: auto;
-    background-attachment: scroll; /* extra safe */
+    background-attachment: scroll;
     background-position: center;
   }
 
-  .wb{ height: auto; min-height: 100vh; padding-top: 106px; }
+  .wb{ padding-top: 106px; }
 
-  /* Grid darf scrollen */
-  .wb-gridView{
-    height: auto;
-    overflow: auto;
-    padding-bottom: 24px;
+  .wb-tabs{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .wb-tabs__btn{
+    padding: 10px 18px;
+    font-size: 11.5px;
+    letter-spacing: .14em;
+  }
+  .wb-tabs__btn.is-active{
+    font-size: 11.5px;
+    letter-spacing: .16em;
   }
 
-  /* Pfeile weg (Mobile scrollt) */
-  .cardsArrow{ display: none; }
-
-  /* Track/Paging deaktivieren => untereinander */
-  .cardsWrap{ overflow: visible; height: auto; }
-  .cardsTrack{
-    display: block;
-    height: auto;
-    transform: none !important;
-    padding: 10px 0 24px;
-  }
-  .cardsPage{
-    display: grid;
-    grid-template-columns: 1fr;   /* ✅ 1 Karte pro Zeile */
-    gap: 16px;
-    margin-bottom: 16px;
-  }
+  .cardsTrack{ grid-template-columns: 1fr; }
 
   /* Kartenbild größer */
   .card__media{ height: 340px; }
