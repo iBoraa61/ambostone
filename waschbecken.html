@@ -775,6 +775,18 @@
     </div>
   </div>
 
+  <!-- Produkt-Klick: eigene Seite öffnen -->
+  <script>
+  document.addEventListener('click', function(e) {
+    var card = e.target.closest('.wb-gridView .card');
+    if (!card) return;
+    if (e.target.closest('.cardsArrow')) return;
+    var t = (card.dataset.title || '').trim();
+    if (!t) return;
+    location.href = 'produkt.html?src=waschbecken.html&p=' + encodeURIComponent(t);
+  });
+  </script>
+
   <script src="waschbecken.js"></script>
 
   <!-- Formspree Submit + Subject automatisch aus Produkt -->

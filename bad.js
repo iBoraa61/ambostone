@@ -195,16 +195,7 @@
     if (location.search) history.pushState(null, '', location.pathname);
   }
 
-  // Card click → eigene Produktseite öffnen
-  document.addEventListener('click', (e) => {
-    if (e.target.closest('form')) return;
-    const card = e.target.closest('.bt-gridView .card');
-    if (!card) return;
-    if (e.target.closest('.cardsArrow')) return;
-    const _t = safeStr(card.dataset.title || qs('.card__title', card)?.textContent || '');
-    if (!_t) return;
-    location.href = 'produkt.html?src=bad.html&p=' + encodeURIComponent(_t);
-  });
+  // Card click: handled by inline <script> in bad.html
 
   backBtn?.addEventListener('click', closeDetail);
 

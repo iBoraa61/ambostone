@@ -359,6 +359,19 @@
 
   </main>
 
+  <!-- Produkt-Klick: eigene Seite öffnen -->
+  <script>
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('form')) return;
+    var card = e.target.closest('.bt-gridView .card');
+    if (!card) return;
+    if (e.target.closest('.cardsArrow')) return;
+    var t = (card.dataset.title || '').trim();
+    if (!t) return;
+    location.href = 'produkt.html?src=bad.html&p=' + encodeURIComponent(t);
+  });
+  </script>
+
   <script src="bad.js"></script>
 
   <!-- Popup -->
