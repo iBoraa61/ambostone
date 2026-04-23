@@ -409,6 +409,71 @@
       </div>
     </section>
 
+    <!-- =====================
+         Kundenstimmen
+         ===================== -->
+    <section class="bt-reviews">
+      <div class="container">
+        <div class="bt-reviews__head">
+          <div class="bt-reviews__kicker">Referenzen</div>
+          <h2 class="bt-reviews__title">Was unsere Kunden sagen</h2>
+        </div>
+      </div>
+      <div class="bt-reviews__track-wrap">
+        <div class="bt-reviews__track" id="reviewsTrack">
+
+          <div class="bt-review-card">
+            <div class="bt-review-card__stars">★★★★★</div>
+            <p class="bt-review-card__text">„Die freistehende Marmor-Badewanne ist ein absolutes Meisterwerk. Jede Maserung ist einzigartig – wir erhalten täglich Komplimente von unseren Gästen."</p>
+            <div class="bt-review-card__author">Dr. Thomas M. <span>München</span></div>
+          </div>
+
+          <div class="bt-review-card">
+            <div class="bt-review-card__stars">★★★★★</div>
+            <p class="bt-review-card__text">„Die Onyx-Badewanne übertrifft jede Erwartung. Die Qualität der Verarbeitung ist auf einem Niveau, das man sonst nur in Fünf-Sterne-Hotels findet."</p>
+            <div class="bt-review-card__author">Sarah K. <span>Hamburg</span></div>
+          </div>
+
+          <div class="bt-review-card">
+            <div class="bt-review-card__stars">★★★★★</div>
+            <p class="bt-review-card__text">„Ein außergewöhnliches Stück, das unser gesamtes Badezimmer verwandelt hat. Professionelle Abwicklung vom ersten Kontakt bis zur Lieferung."</p>
+            <div class="bt-review-card__author">Marc &amp; Lena B. <span>Frankfurt</span></div>
+          </div>
+
+          <div class="bt-review-card">
+            <div class="bt-review-card__stars">★★★★★</div>
+            <p class="bt-review-card__text">„Makellose Qualität. Das Naturstein-Material hat eine Tiefe und Wärme, die weder ein Foto noch Worte wirklich erfassen können."</p>
+            <div class="bt-review-card__author">Elisabeth R. <span>Düsseldorf</span></div>
+          </div>
+
+          <div class="bt-review-card">
+            <div class="bt-review-card__stars">★★★★★</div>
+            <p class="bt-review-card__text">„Wir haben lange nach der perfekten Badewanne gesucht – bei AMBOSTONE haben wir sie gefunden. Diskreter Luxus auf höchstem Niveau."</p>
+            <div class="bt-review-card__author">Alexander H. <span>Stuttgart</span></div>
+          </div>
+
+          <div class="bt-review-card">
+            <div class="bt-review-card__stars">★★★★★</div>
+            <p class="bt-review-card__text">„Jedes Detail stimmt. Die Beratung war persönlich und kompetent, die Lieferung pünktlich. Wahre Handwerkskunst, die ein Leben lang hält."</p>
+            <div class="bt-review-card__author">Claudia W. <span>Berlin</span></div>
+          </div>
+
+          <div class="bt-review-card">
+            <div class="bt-review-card__stars">★★★★★</div>
+            <p class="bt-review-card__text">„Unsere Carrara-Badewanne zieht jeden Blick auf sich. AMBOSTONE verbindet Naturschönheit mit einer Präzision, die man hört und spürt."</p>
+            <div class="bt-review-card__author">Julia &amp; Markus S. <span>Wien</span></div>
+          </div>
+
+          <div class="bt-review-card">
+            <div class="bt-review-card__stars">★★★★★</div>
+            <p class="bt-review-card__text">„Selten erlebt man, dass ein Produkt die Erwartungen so deutlich übertrifft. Das Stück ist ein Gespräch für sich – pure Eleganz."</p>
+            <div class="bt-review-card__author">Henrik L. <span>Zürich</span></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Produkt-Klick: eigene Seite öffnen -->
@@ -514,6 +579,57 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    /* ---- Reviews Slider ---- */
+    (function(){
+      var track = document.getElementById('reviewsTrack');
+      if (!track) return;
+
+      /* clone all cards and append for infinite loop */
+      var origCards = Array.from(track.children);
+      origCards.forEach(function(c){ track.appendChild(c.cloneNode(true)); });
+
+      var cardW  = 320;
+      var gap    = 24;
+      var step   = cardW + gap;
+      var total  = origCards.length;
+      var idx    = 0;
+      var animating = false;
+
+      function goTo(n, animated){
+        if (animated === false) {
+          track.style.transition = 'none';
+        } else {
+          track.style.transition = 'transform 0.65s cubic-bezier(.4,0,.2,1)';
+        }
+        track.style.transform = 'translateX(-' + (n * step) + 'px)';
+      }
+
+      function next(){
+        if (animating) return;
+        animating = true;
+        idx++;
+        goTo(idx, true);
+      }
+
+      track.addEventListener('transitionend', function(){
+        animating = false;
+        if (idx >= total) {
+          idx = 0;
+          goTo(idx, false);
+          /* force reflow so next transition fires correctly */
+          track.getBoundingClientRect();
+        }
+      });
+
+      var timer = setInterval(next, 3800);
+
+      /* pause on hover */
+      track.closest('.bt-reviews__track-wrap').addEventListener('mouseenter', function(){ clearInterval(timer); });
+      track.closest('.bt-reviews__track-wrap').addEventListener('mouseleave', function(){ timer = setInterval(next, 3800); });
+    })();
+  </script>
 
 </body>
 </html>
