@@ -653,38 +653,77 @@ img{ max-width: 100%; display: block; }
    Footer
 ========================================================= */
 .footer{
-  padding: 22px 0 34px;
-  background: rgba(0,0,0,.92);
-  border-top: 1px solid rgba(200,176,138,.14);
+  padding: 56px 0 30px;
+  background: rgba(0,0,0,.95);
+  border-top: 1px solid rgba(200,176,138,.10);
+  text-align: center;
 }
 
-.footer__inner{
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer__link{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  padding: 10px 16px;
-  border: 1px solid rgba(200,176,138,.28);
-  background: rgba(200,176,138,.08);
-  color: rgba(255,255,255,.85);
+.footer__brand{
   font-family: var(--serif);
-  letter-spacing: .18em;
-  font-size: 11px;
+  font-size: 13px;
+  letter-spacing: .42em;
   text-transform: uppercase;
-  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  color: rgba(200,176,138,.70);
+  margin-bottom: 26px;
 }
 
-.footer__link:hover{
-  transform: translateY(-1px);
-  border-color: rgba(200,176,138,.50);
-  background: rgba(200,176,138,.12);
+.footer__nav{
+  display: flex;
+  justify-content: center;
+  gap: 10px 36px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.footer__nav-link{
+  font-family: var(--serif);
+  font-size: 10px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.40);
+  transition: color .18s ease;
+}
+
+.footer__nav-link:hover{
+  color: rgba(200,176,138,.85);
+}
+
+.footer__contact{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 11.5px;
+  letter-spacing: .04em;
+  color: rgba(255,255,255,.28);
+  margin-bottom: 28px;
+}
+
+.footer__contact a{
+  color: rgba(255,255,255,.32);
+  transition: color .18s ease;
+}
+
+.footer__contact a:hover{
+  color: rgba(200,176,138,.75);
+}
+
+.footer__contact-sep{
+  color: rgba(200,176,138,.22);
+}
+
+.footer__copy{
+  font-size: 9.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.16);
+}
+
+@media (max-width: 480px){
+  .footer__nav{ gap: 10px 24px; }
+  .footer__contact{ flex-direction: column; gap: 4px; }
+  .footer__contact-sep{ display: none; }
 }
 
 /* =========================================================

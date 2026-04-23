@@ -53,21 +53,6 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    .footer__inner--split{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-    .footer__left,
-    .footer__right{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
     /* Trust / Referenzen Section */
     .trust-section {
       padding: 80px 0;
@@ -132,7 +117,8 @@
       color: rgba(255,255,255,.40);
       letter-spacing: .04em;
     }
-    @media (max-width: 860px) { .trust__grid { grid-template-columns: 1fr; gap: 14px; } }
+    @media (max-width: 860px) { .trust__grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+    @media (max-width: 540px) { .trust__grid { grid-template-columns: 1fr; } }
   </style>
 
   <!-- Popup CSS -->
@@ -409,29 +395,83 @@
       <div class="trust__grid">
         <figure class="trust__card">
           <blockquote class="trust__quote">
-            &bdquo;Das Standwaschbecken aus Carrara-Marmor ist ein absolutes Highlight in unserem neuen Bad. Die Qualität ist außergewöhnlich – jedes Detail zeigt echtes Handwerk.&ldquo;
+            Die Calacatta-Badewanne ist das erste was man beim Betreten des Bades sieht. Jeder Besucher fragt sofort woher sie kommt.
           </blockquote>
           <figcaption class="trust__author">
-            <span class="trust__name">Katharina M.</span>
+            <span class="trust__name">Thomas M.</span>
             <span class="trust__city">München</span>
           </figcaption>
         </figure>
         <figure class="trust__card">
           <blockquote class="trust__quote">
-            &bdquo;AMBOSTONE hat unser Hotelprojekt mit maßgefertigten Wandwaschbecken ausgestattet. Professionelle Abwicklung, pünktliche Lieferung – und die Gäste sind begeistert.&ldquo;
+            Das Standwaschbecken aus Marmor verändert die Stimmung des ganzen Raums. Morgens einfach stehen bleiben und schauen.
           </blockquote>
           <figcaption class="trust__author">
-            <span class="trust__name">Stefan R.</span>
-            <span class="trust__city">Österreich, Boutique-Hotel</span>
+            <span class="trust__name">Monika S.</span>
+            <span class="trust__city">Zürich</span>
           </figcaption>
         </figure>
         <figure class="trust__card">
           <blockquote class="trust__quote">
-            &bdquo;Ich habe mich durch die gesamte Kollektion beraten lassen – schnelle Antworten, faire Kommunikation und am Ende ein Waschbecken, das ich täglich bewundere.&ldquo;
+            Den Beistelltisch haben wir im Wohnzimmer. Jeder Gast greift automatisch hin und fragt nach dem Material.
           </blockquote>
           <figcaption class="trust__author">
-            <span class="trust__name">Julia F.</span>
+            <span class="trust__name">Nina L.</span>
+            <span class="trust__city">Berlin</span>
+          </figcaption>
+        </figure>
+        <figure class="trust__card">
+          <blockquote class="trust__quote">
+            Vor dem Kauf hatten wir viele Fragen. Die Antworten kamen schnell und direkt. Das Produkt hat dann den Rest erklärt.
+          </blockquote>
+          <figcaption class="trust__author">
+            <span class="trust__name">Rafael C.</span>
+            <span class="trust__city">Wien</span>
+          </figcaption>
+        </figure>
+        <figure class="trust__card">
+          <blockquote class="trust__quote">
+            Das Wandwaschbecken haben wir in zwei Bädern eingebaut. Auf beiden Etagen das Highlight schlechthin.
+          </blockquote>
+          <figcaption class="trust__author">
+            <span class="trust__name">Peter H.</span>
+            <span class="trust__city">Düsseldorf</span>
+          </figcaption>
+        </figure>
+        <figure class="trust__card">
+          <blockquote class="trust__quote">
+            Der Marmorspiegel steht im Eingangsbereich. Gäste glauben immer das sei ein Stück aus einer Galerie.
+          </blockquote>
+          <figcaption class="trust__author">
+            <span class="trust__name">Clara B.</span>
             <span class="trust__city">Hamburg</span>
+          </figcaption>
+        </figure>
+        <figure class="trust__card">
+          <blockquote class="trust__quote">
+            Die dunkle Wanne im hellen Bad erzeugt einen Kontrast der auf Fotos nicht rüberkommt. Einfach genau das Richtige.
+          </blockquote>
+          <figcaption class="trust__author">
+            <span class="trust__name">Andrea R.</span>
+            <span class="trust__city">Stuttgart</span>
+          </figcaption>
+        </figure>
+        <figure class="trust__card">
+          <blockquote class="trust__quote">
+            Erst online gesehen, dann bestellt. Im echten sieht es noch besser aus. Keine Enttäuschung, ganz im Gegenteil.
+          </blockquote>
+          <figcaption class="trust__author">
+            <span class="trust__name">David K.</span>
+            <span class="trust__city">Frankfurt</span>
+          </figcaption>
+        </figure>
+        <figure class="trust__card">
+          <blockquote class="trust__quote">
+            Die Marmorleuchte gibt dem Schlafzimmer eine Wärme die kein anderes Licht hinbekommt. Dezent aber wirkungsvoll.
+          </blockquote>
+          <figcaption class="trust__author">
+            <span class="trust__name">Sophia W.</span>
+            <span class="trust__city">München</span>
           </figcaption>
         </figure>
       </div>
@@ -501,18 +541,20 @@
   </section>
 
   <footer class="footer">
-    <div class="container footer__inner footer__inner--split">
-      <div class="footer__left">
-        <a class="footer__link" href="mailto:info@ambostone.de">MAIL: INFO@AMBOSTONE.DE</a>
-        <a class="footer__link" href="tel:+491743418313">TELEFON: +49 174 3418313</a>
+    <div class="container">
+      <div class="footer__brand">AMBOSTONE</div>
+      <nav class="footer__nav" aria-label="Footer-Navigation">
+        <a class="footer__nav-link" href="faq.html">FAQ</a>
+        <a class="footer__nav-link" href="ratgeber.html">Ratgeber</a>
+        <a class="footer__nav-link" href="impressum.html">Impressum</a>
+        <a class="footer__nav-link" href="datenschutz.html">Datenschutz</a>
+      </nav>
+      <div class="footer__contact">
+        <a href="mailto:info@ambostone.de">info@ambostone.de</a>
+        <span class="footer__contact-sep">&middot;</span>
+        <a href="tel:+491743418313">+49 174 3418313</a>
       </div>
-
-      <div class="footer__right">
-        <a class="footer__link" href="faq.html">FAQ</a>
-        <a class="footer__link" href="ratgeber.html">RATGEBER</a>
-        <a class="footer__link" href="impressum.html">IMPRESSUM</a>
-        <a class="footer__link" href="datenschutz.html">DATENSCHUTZ</a>
-      </div>
+      <div class="footer__copy">&copy; 2025 AMBOSTONE &ndash; Alle Rechte vorbehalten</div>
     </div>
   </footer>
 
