@@ -229,42 +229,89 @@
 </head>
 
 <body class="page page--faq">
-  <header class="header">
+  <div class="announce-bar" id="announceBar">
+    Für exklusive Anfragen rufen Sie uns bitte an:&#160;
+    <a href="tel:+491743418313">0174 3418313</a>
+  </div>
+
+  <header class="header header--lusso" id="mainHeader">
     <div class="container header__inner">
+      <div class="header__left">
+        <button class="hdr-search-btn" id="searchToggle" type="button" aria-label="Suche öffnen">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.6"/>
+            <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span>Suche</span>
+        </button>
+        <a class="hdr-phone-inline" href="tel:+491743418313">0174 3418313</a>
+      </div>
+
       <a class="brand" href="index.html" aria-label="AMBOSTONE Startseite">
         <span class="brand__wordmark">AMBOSTONE</span>
         <span class="brand__tagline">LUXURY STONE ATELIER</span>
       </a>
 
-      <nav class="nav" aria-label="Hauptnavigation">
-        <a class="nav__link" href="index.html">STARTSEITE</a>
-        <a class="nav__link" href="waschbecken.html">WASCHBECKEN</a>
-        <a class="nav__link" href="bad.html">BADEWANNEN</a>
-        <a class="nav__link" href="fliesen.html">STONE LIVING</a>
-        <a class="nav__link" href="index.html#atelier">ÜBER AMBOSTONE</a>
-      </nav>
-
-      <button class="navToggle" type="button" aria-label="Menü öffnen" aria-expanded="false">
-        <span class="navToggle__lines" aria-hidden="true"></span>
-      </button>
-
-      <div class="navOverlay" id="navOverlay" aria-hidden="true" hidden>
-        <div class="navDrawer" role="dialog" aria-modal="true" aria-label="Navigation">
-          <div class="navDrawer__top">
-            <div class="navDrawer__title">Menü</div>
-            <button class="navClose" id="navClose" type="button" aria-label="Menü schließen">✕</button>
-          </div>
-          <nav class="navMobile" aria-label="Mobile Navigation">
-            <a href="index.html">STARTSEITE</a>
-            <a href="waschbecken.html">WASCHBECKEN</a>
-            <a href="bad.html">BADEWANNEN</a>
-            <a href="fliesen.html">STONE LIVING</a>
-            <a href="index.html#atelier">ÜBER AMBOSTONE</a>
-          </nav>
+      <div class="header__right">
+        <a class="hdr-contact-link" href="index.html#atelier">Kontakt</a>
+        <div class="navActions" aria-label="Mobile Aktionen">
+          <a class="navPhone" href="tel:+491743418313" aria-label="Anrufen: +49 174 3418313">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 16.7v2a2 2 0 0 1-2.2 2c-9.1-.8-13.7-5.4-14.5-14.5A2 2 0 0 1 5.3 4h2a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.5 2.1l-1 1c1.3 2.4 3.2 4.3 5.6 5.6l1-1a2 2 0 0 1 2.1-.5c1 .4 2 .6 3 .7A2 2 0 0 1 20 16.7Z"
+                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <button class="navToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navOverlay">
+            <span class="navToggle__lines" aria-hidden="true"></span>
+          </button>
         </div>
       </div>
     </div>
+
+    <div class="header__nav-bar">
+      <div class="container">
+        <nav class="nav" aria-label="Hauptnavigation">
+          <a class="nav__link" href="index.html">STARTSEITE</a>
+          <a class="nav__link" href="waschbecken.html">WASCHBECKEN</a>
+          <a class="nav__link" href="bad.html">BADEWANNEN</a>
+          <a class="nav__link" href="fliesen.html">STONE LIVING</a>
+          <a class="nav__link" href="index.html#atelier">ÜBER AMBOSTONE</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="navOverlay" id="navOverlay" aria-hidden="true">
+      <div class="navDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+        <div class="navDrawer__top">
+          <div class="navDrawer__title">Menü</div>
+          <button class="navClose" id="navClose" type="button" aria-label="Menü schließen">✕</button>
+        </div>
+        <nav class="navMobile" aria-label="Mobile Navigation Links">
+          <a href="index.html">STARTSEITE</a>
+          <a href="waschbecken.html">WASCHBECKEN</a>
+          <a href="bad.html">BADEWANNEN</a>
+          <a href="fliesen.html">STONE LIVING</a>
+          <a href="index.html#atelier">ÜBER AMBOSTONE</a>
+        </nav>
+      </div>
+    </div>
   </header>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay" hidden>
+    <div class="search-overlay__box">
+      <div class="search-overlay__input-wrap">
+        <svg class="search-overlay__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.6"/>
+          <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <input class="search-overlay__input" type="text" id="searchInput"
+               placeholder="Produkt suchen …" autocomplete="off" spellcheck="false">
+        <button class="search-overlay__close" id="searchClose" type="button" aria-label="Suche schließen">✕</button>
+      </div>
+      <div class="search-overlay__results" id="searchResults"></div>
+    </div>
+  </div>
 
   <main class="faq-page" role="main">
     <div class="container">
@@ -384,6 +431,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="header.js"></script>
 
   <script>
     (() => {
