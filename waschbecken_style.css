@@ -38,7 +38,7 @@
 .wb{
   height: auto;
   min-height: 100vh;
-  padding-top: 148px; /* header height spacing */
+  padding-top: 192px; /* header height spacing */
 }
 
 /* -------------------------
@@ -571,7 +571,7 @@
     background-position: center;
   }
 
-  .wb{ padding-top: 106px; }
+  .wb{ padding-top: 140px; }
 
   .wb-tabs{
     flex-wrap: wrap;

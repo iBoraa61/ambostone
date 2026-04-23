@@ -37,7 +37,7 @@
 .bt{
   height: auto;
   min-height: 100vh;
-  padding-top: 148px; /* Platz für fixed header + announce bar */
+  padding-top: 192px; /* Platz für fixed header + announce bar */
 }
 
 /* =========================
@@ -532,7 +532,7 @@
 @media (max-width: 640px){
   .page--bad{ overflow: auto; }
 
-  .bt{ padding-top: 106px; }
+  .bt{ padding-top: 140px; }
 
   .bt-gridView .cardsTrack{ grid-template-columns: 1fr; }
 
