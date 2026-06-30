@@ -8,7 +8,7 @@
   --gold-soft: rgba(138,104,48,.45);
   --line: rgba(138,104,48,.35);
 
-  --serif: "Cinzel", ui-serif, Georgia, "Times New Roman", serif;
+  --serif: "Cinzel", "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", serif;
   --serif-soft: "Cormorant Garamond", ui-serif, Georgia, serif;
 
   --container: 1200px;
