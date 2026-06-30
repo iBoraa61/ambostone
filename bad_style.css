@@ -553,7 +553,7 @@
   padding: 72px 0 60px;
   position: relative;
   z-index: 1;
-  background: #f5f3f0;
+  background: var(--cream-dark);
   border-top: 1px solid rgba(0,0,0,.08);
 }
 

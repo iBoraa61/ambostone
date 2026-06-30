@@ -158,7 +158,7 @@ html:has(.page--bad) {
 .page--legal,
 .page--faq,
 .page--ratgeber {
-  background-color: #fafafa !important;
+  background-color: #f5f3f0 !important;
   background-image: none !important;
 }
 
@@ -167,8 +167,9 @@ html:has(.page--beistelltische),
 html:has(.page--serviertabletts),
 html:has(.page--badregale),
 html:has(.page--leuchten),
-html:has(.page--vasen) {
-  background: #fafafa;
+html:has(.page--vasen),
+html:has(.page--fliesen) {
+  background: #f5f3f0;
 }
 
 .page--spiegel .header,
@@ -177,12 +178,12 @@ html:has(.page--vasen) {
 .page--badregale .header,
 .page--leuchten .header,
 .page--vasen .header {
-  background-color: #fafafa !important;
+  background-color: #f5f3f0 !important;
   background-image: none !important;
 }
 
 .page--fliesen .header {
-  background-color: #fafafa !important;
+  background-color: #f5f3f0 !important;
   background-image: none !important;
 }
 
@@ -247,7 +248,7 @@ html:has(.page--vasen) {
 .section,
 .living-strip,
 .duo-section {
-  background-color: #fafafa !important;
+  background-color: #f5f3f0 !important;
   background-image: none !important;
 }
 
@@ -459,7 +460,7 @@ html:has(.page--vasen) {
 
 /* ── Produktdetail (Overlay + produkt.html) ── */
 .wb-detail {
-  background: #fafafa !important;
+  background: #f5f3f0 !important;
   backdrop-filter: none !important;
 }
 
@@ -626,7 +627,7 @@ html:has(.page--vasen) {
 
 /* ── Reviews Stone Living ── */
 .sl-reviews {
-  background: #f5f3f0 !important;
+  background: #ebe6de !important;
   border-top-color: rgba(0,0,0,.08) !important;
 }
 
@@ -648,7 +649,7 @@ html:has(.page--vasen) {
 }
 
 .wb-reviews {
-  background: #f5f3f0 !important;
+  background: #ebe6de !important;
   border-top-color: rgba(0,0,0,.08) !important;
 }
 
@@ -671,7 +672,7 @@ html:has(.page--vasen) {
 
 /* Badewannen Referenzen – gleich wie Waschbecken */
 .bt-reviews {
-  background: #f5f3f0 !important;
+  background: #ebe6de !important;
   border-top-color: rgba(0,0,0,.08) !important;
 }
 
