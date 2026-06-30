@@ -302,26 +302,30 @@
     </section>
   </main>
 
-  <!-- Waschbecken duo (Stand + Wand nebeneinander) -->
-  <section class="duo-section" data-reveal>
-    <a class="duo-card" href="waschbecken.html">
-      <img class="duo-card__img" src="assets/images/products/stand-02-main.png" alt="Naturstein Standwaschbecken">
-      <div class="duo-card__overlay">
-        <span class="duo-card__category">Waschbecken</span>
-        <h2 class="duo-card__title">Standwaschbecken</h2>
-        <p class="duo-card__desc">Skulpturale Becken aus Marmor und Sinterstein &ndash; jedes Stück ein Unikat.</p>
-        <span class="duo-card__link">Kollektion erkunden &rarr;</span>
-      </div>
-    </a>
-    <a class="duo-card" href="waschbecken.html#wand">
-      <img class="duo-card__img" src="assets/images/products/wand-03-main.jpg" alt="Wandwaschbecken aus Naturstein">
-      <div class="duo-card__overlay">
-        <span class="duo-card__category">Waschbecken</span>
-        <h2 class="duo-card__title">Wandwaschbecken</h2>
-        <p class="duo-card__desc">Wandhängende Präzision &ndash; markante Konturen aus Marmor und Sinterstein.</p>
-        <span class="duo-card__link">Kollektion erkunden &rarr;</span>
-      </div>
-    </a>
+  <!-- Standwaschbecken -->
+  <section class="feat-row" data-reveal>
+    <div class="feat-row__img">
+      <img src="assets/images/products/stand-02-main.png" alt="Naturstein Standwaschbecken">
+    </div>
+    <div class="feat-row__text">
+      <span class="feat-row__kicker">Waschbecken</span>
+      <h2 class="feat-row__title">Standwaschbecken</h2>
+      <p class="feat-row__desc">Skulpturale Becken aus Marmor und Sinterstein &ndash; jedes Stück ein Unikat.</p>
+      <a class="feat-row__cta" href="waschbecken.html">Kollektion erkunden &rarr;</a>
+    </div>
+  </section>
+
+  <!-- Wandwaschbecken -->
+  <section class="feat-row feat-row--flip" data-reveal>
+    <div class="feat-row__img">
+      <img src="assets/images/products/wand-03-main.jpg" alt="Wandwaschbecken aus Naturstein">
+    </div>
+    <div class="feat-row__text">
+      <span class="feat-row__kicker">Waschbecken</span>
+      <h2 class="feat-row__title">Wandwaschbecken</h2>
+      <p class="feat-row__desc">Wandhängende Präzision &ndash; markante Konturen aus Marmor und Sinterstein.</p>
+      <a class="feat-row__cta" href="waschbecken.html#wand">Kollektion erkunden &rarr;</a>
+    </div>
   </section>
 
   <section class="feat-row" data-reveal>
@@ -373,7 +377,7 @@
         </a>
         <a class="living-item" href="badregale.html">
           <div class="living-item__img-wrap">
-            <img src="assets/images/living/Badregale/badregal1_main.png" alt="Badregale aus Naturstein">
+            <img src="assets/images/living/Badregale/badregal3_main.jpg" alt="Badregale aus Naturstein">
           </div>
           <div class="living-item__info">
             <span class="living-item__name">Badregale</span>
@@ -724,7 +728,7 @@
     // -------------------------
     (() => {
       const els = document.querySelectorAll(
-        '.feat-row[data-reveal], .duo-section[data-reveal], .living-strip[data-reveal]'
+        '.feat-row[data-reveal], .living-strip[data-reveal]'
       );
       if (!els.length) return;
       const obs = new IntersectionObserver((entries) => {

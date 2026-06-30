@@ -361,7 +361,7 @@ img{ max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 80vh;
-  background-color: #fafafa;
+  background-color: var(--cream);
   overflow: hidden;
 }
 
