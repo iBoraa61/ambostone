@@ -14,12 +14,19 @@
   height: auto;
   min-height: 100%;
   overflow: auto;
-  background-color: #fafafa;
-  background-image: none;
-  background-attachment: scroll;
+  background-color: #070707;
 
-  --bt-stroke: rgba(0,0,0,.08);
-  --bt-gold: rgba(138,104,48,.85);
+  background-image:
+    radial-gradient(1200px 700px at 30% 0%, rgba(0,0,0,.55), rgba(0,0,0,.88)),
+    linear-gradient(180deg, rgba(5,4,3,.65), rgba(5,4,3,.94)),
+    url("assets/images/bg/onyx_background2.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  --bt-stroke: rgba(200,176,138,.22);
+  --bt-gold: rgba(200,176,138,.85);
   --card-bg-1: #ffffff;
   --card-bg-2: #ffffff;
 }

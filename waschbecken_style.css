@@ -14,11 +14,19 @@
   height: auto;
   min-height: 100%;
   overflow: auto;
-  background-color: #fafafa;
-  background-image: none;
+
+  background-color: #070707;
+
+  background-image:
+    radial-gradient(1200px 700px at 30% 0%, rgba(0,0,0,.35), rgba(0,0,0,.70)),
+    linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.78)),
+    url("assets/images/bg/onyx_background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-attachment: scroll;
 
-  /* Tokens */
+  /* Tokens – Karten bleiben hell */
   --card-stroke: rgba(0,0,0,.08);
   --card-beige-2: #ffffff;
   --card-beige-3: #ffffff;
