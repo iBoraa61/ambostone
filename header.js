@@ -42,6 +42,7 @@
     { name: 'Spiegel',                 category: 'Stone Living',  url: 'spiegel.html' },
     { name: 'Badregale',               category: 'Stone Living',  url: 'badregale.html' },
     { name: 'Serviertabletts',         category: 'Stone Living',  url: 'serviertabletts.html' },
+    { name: 'Vasen',                   category: 'Stone Living',  url: 'vasen.html' },
     { name: 'Marmor Waschbecken',      category: 'Waschbecken',   url: 'waschbecken.html' },
     { name: 'Naturstein Badewanne',    category: 'Badewannen',    url: 'bad.html' },
     { name: 'Stone Living Kollektion', category: 'Stone Living',  url: 'fliesen.html' },

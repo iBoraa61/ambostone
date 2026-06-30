@@ -33,7 +33,8 @@
 .page--spiegel .header,
 .page--beistelltische .header,
 .page--serviertabletts .header,
-.page--badregale .header{
+.page--badregale .header,
+.page--vasen .header{
   background-color: #070707;
   background-image:
     radial-gradient(1200px 700px at 30% 0%, rgba(0,0,0,.35), rgba(0,0,0,.72)),
@@ -319,5 +320,80 @@
   color: rgba(255,255,255,.35);
   font-family: var(--sans);
   margin-top: 2px;
+}
+
+/* =========================
+   Stone Living sub-pages (Spiegel, Vasen, …)
+   – Abstand unter fixiertem Header für Zurück-Button
+========================= */
+.page--spiegel .wb,
+.page--beistelltische .wb,
+.page--serviertabletts .wb,
+.page--badregale .wb,
+.page--leuchten .wb,
+.page--vasen .wb {
+  height: auto;
+  min-height: 100vh;
+  padding-top: 192px;
+}
+
+.page--spiegel .wb-gridView,
+.page--beistelltische .wb-gridView,
+.page--serviertabletts .wb-gridView,
+.page--badregale .wb-gridView,
+.page--leuchten .wb-gridView,
+.page--vasen .wb-gridView {
+  height: auto;
+  overflow: visible;
+}
+
+.page--spiegel .wb-panel,
+.page--beistelltische .wb-panel,
+.page--serviertabletts .wb-panel,
+.page--badregale .wb-panel,
+.page--leuchten .wb-panel,
+.page--vasen .wb-panel {
+  display: block !important;
+  height: auto;
+}
+
+.page--spiegel .wb-detail,
+.page--beistelltische .wb-detail,
+.page--serviertabletts .wb-detail,
+.page--badregale .wb-detail,
+.page--leuchten .wb-detail,
+.page--vasen .wb-detail {
+  position: fixed;
+  inset: 192px 0 0 0;
+  overflow: auto;
+}
+
+.page--spiegel .lk__head,
+.page--beistelltische .lk__head,
+.page--serviertabletts .lk__head,
+.page--badregale .lk__head,
+.page--leuchten .lk__head,
+.page--vasen .lk__head {
+  padding: 8px 0 20px;
+}
+
+@media (max-width: 980px) {
+  .page--spiegel .wb,
+  .page--beistelltische .wb,
+  .page--serviertabletts .wb,
+  .page--badregale .wb,
+  .page--leuchten .wb,
+  .page--vasen .wb {
+    padding-top: 120px;
+  }
+
+  .page--spiegel .wb-detail,
+  .page--beistelltische .wb-detail,
+  .page--serviertabletts .wb-detail,
+  .page--badregale .wb-detail,
+  .page--leuchten .wb-detail,
+  .page--vasen .wb-detail {
+    inset: 120px 0 0 0;
+  }
 }
 
