@@ -1,0 +1,688 @@
+/* theme-light.css — helles Farbschema sitewide */
+
+html { background: #fafafa; }
+
+/* ── Header: helle Schrift auf Startseiten-Hero, sonst dunkel ── */
+.page--home .header--lusso:not(.is-scrolled) .brand__wordmark,
+.page--home .header--lusso:not(.is-scrolled) .brand__tagline,
+.page--home .header--lusso:not(.is-scrolled) .nav__link,
+.page--home .header--lusso:not(.is-scrolled) .hdr-search-btn,
+.page--home .header--lusso:not(.is-scrolled) .hdr-phone-inline,
+.page--home .header--lusso:not(.is-scrolled) .hdr-contact-link,
+.page--home .header--lusso:not(.is-scrolled) .navToggle__lines,
+.page--home .header--lusso:not(.is-scrolled) .navToggle__lines::before,
+.page--home .header--lusso:not(.is-scrolled) .navToggle__lines::after {
+  color: rgba(255,255,255,.92);
+}
+
+.page--home .header--lusso:not(.is-scrolled) .navToggle__lines,
+.page--home .header--lusso:not(.is-scrolled) .navToggle__lines::before,
+.page--home .header--lusso:not(.is-scrolled) .navToggle__lines::after {
+  background: rgba(255,255,255,.90);
+}
+
+/* Header nach Scroll: weiss + dunkle Schrift (alle Seiten) */
+.header.is-scrolled .brand__wordmark,
+.header--lusso.is-scrolled .brand__wordmark {
+  color: rgba(10,8,6,.88) !important;
+  text-shadow: none !important;
+}
+
+.header.is-scrolled .brand__tagline,
+.header--lusso.is-scrolled .brand__tagline {
+  color: var(--gold) !important;
+}
+
+.header.is-scrolled .nav__link,
+.header--lusso.is-scrolled .nav__link,
+.header.is-scrolled .hdr-search-btn,
+.header--lusso.is-scrolled .hdr-search-btn,
+.header.is-scrolled .hdr-phone-inline,
+.header--lusso.is-scrolled .hdr-phone-inline,
+.header.is-scrolled .hdr-contact-link,
+.header--lusso.is-scrolled .hdr-contact-link {
+  color: rgba(10,8,6,.78) !important;
+}
+
+.header.is-scrolled .nav__link:hover,
+.header--lusso.is-scrolled .nav__link:hover,
+.header.is-scrolled .nav__link.is-active,
+.header--lusso.is-scrolled .nav__link.is-active {
+  color: rgba(10,8,6,1) !important;
+}
+
+.header.is-scrolled .navToggle__lines,
+.header.is-scrolled .navToggle__lines::before,
+.header.is-scrolled .navToggle__lines::after,
+.header--lusso.is-scrolled .navToggle__lines,
+.header--lusso.is-scrolled .navToggle__lines::before,
+.header--lusso.is-scrolled .navToggle__lines::after {
+  background: rgba(10,8,6,.82) !important;
+}
+
+.header.is-scrolled .header__nav-bar,
+.header--lusso.is-scrolled .header__nav-bar {
+  border-top-color: rgba(0,0,0,.08);
+}
+
+.header.is-scrolled .navPhone,
+.header--lusso.is-scrolled .navPhone,
+.header.is-scrolled .navToggle,
+.header--lusso.is-scrolled .navToggle {
+  border-color: rgba(0,0,0,.12);
+  background: rgba(0,0,0,.04);
+  color: rgba(10,8,6,.88);
+}
+
+/* Unterseiten: Header sofort dunkle Schrift */
+body:not(.page--home) .header--lusso .brand__wordmark {
+  color: rgba(10,8,6,.88);
+  text-shadow: none;
+}
+
+body:not(.page--home) .header--lusso .nav__link,
+body:not(.page--home) .header--lusso .hdr-search-btn,
+body:not(.page--home) .header--lusso .hdr-phone-inline,
+body:not(.page--home) .header--lusso .hdr-contact-link {
+  color: rgba(10,8,6,.78);
+}
+
+body:not(.page--home) .header--lusso .navToggle__lines,
+body:not(.page--home) .header--lusso .navToggle__lines::before,
+body:not(.page--home) .header--lusso .navToggle__lines::after {
+  background: rgba(10,8,6,.82);
+}
+
+body:not(.page--home) .header--lusso .header__nav-bar {
+  border-top-color: rgba(0,0,0,.08);
+}
+
+body:not(.page--home) .header--lusso .navPhone,
+body:not(.page--home) .header--lusso .navToggle {
+  border-color: rgba(0,0,0,.12);
+  background: rgba(0,0,0,.04);
+  color: rgba(10,8,6,.88);
+}
+
+/* ── Seiten-Hintergründe ── */
+.page--washbecken,
+.page--bad,
+.page--fliesen,
+.page--spiegel,
+.page--beistelltische,
+.page--serviertabletts,
+.page--badregale,
+.page--leuchten,
+.page--vasen,
+.page--produkt,
+.page--legal,
+.page--faq,
+.page--ratgeber {
+  background-color: #fafafa !important;
+  background-image: none !important;
+}
+
+html:has(.page--spiegel),
+html:has(.page--beistelltische),
+html:has(.page--serviertabletts),
+html:has(.page--badregale),
+html:has(.page--leuchten),
+html:has(.page--vasen) {
+  background: #fafafa;
+}
+
+.page--spiegel .header,
+.page--beistelltische .header,
+.page--serviertabletts .header,
+.page--badregale .header,
+.page--leuchten .header,
+.page--vasen .header,
+.page--washbecken .header,
+.page--bad .header {
+  background-color: #fafafa !important;
+  background-image: none !important;
+}
+
+.page--fliesen .header {
+  background-color: #fafafa !important;
+  background-image: none !important;
+}
+
+.page--legal .header,
+.page--home2Active .header {
+  background: rgba(255,255,255,.92) !important;
+  border-bottom: 1px solid rgba(0,0,0,.08) !important;
+}
+
+/* ── Startseite: Sektionen ── */
+.feat-row,
+.feat-row--flip,
+.section,
+.living-strip,
+.duo-section,
+.home2 {
+  background-color: #fafafa !important;
+  background-image: none !important;
+}
+
+.feat-row + .feat-row {
+  border-top-color: rgba(0,0,0,.06);
+}
+
+.feat-row__title,
+.section__title,
+.living-strip__title,
+.home2__title,
+.duo-card__title {
+  color: rgba(10,8,6,.90) !important;
+}
+
+.feat-row__desc,
+.section__lead,
+.home2__text {
+  color: rgba(10,8,6,.62) !important;
+}
+
+.home2__bullets li {
+  background: #fff;
+  border-color: rgba(0,0,0,.08);
+  color: rgba(10,8,6,.72);
+}
+
+.home2__card {
+  background: #fff;
+  border-color: rgba(0,0,0,.08);
+  box-shadow: 0 12px 40px rgba(0,0,0,.06);
+}
+
+.home2__formTitle {
+  color: rgba(10,8,6,.90) !important;
+}
+
+.home2__label {
+  color: rgba(10,8,6,.62) !important;
+}
+
+.home2__field {
+  background: #fff;
+  border-color: rgba(0,0,0,.12);
+  color: rgba(10,8,6,.90);
+}
+
+.home2__note {
+  color: rgba(10,8,6,.50) !important;
+}
+
+/* Trust / Reviews Startseite */
+.trust-section {
+  background: #f5f3f0 !important;
+}
+
+.trust__title {
+  color: rgba(10,8,6,.88) !important;
+}
+
+.trust__card {
+  background: #fff !important;
+  border-color: rgba(0,0,0,.08) !important;
+}
+
+.trust__quote {
+  color: rgba(10,8,6,.68) !important;
+}
+
+.trust__city {
+  color: rgba(10,8,6,.45) !important;
+}
+
+/* Living-Strip Karten */
+.living-item {
+  border-color: rgba(0,0,0,.08);
+  background: #fff;
+}
+
+.living-item__info {
+  background: #fff !important;
+}
+
+.living-item__name {
+  color: rgba(10,8,6,.88) !important;
+}
+
+.living-item__cta {
+  color: rgba(10,8,6,.50) !important;
+}
+
+.living-item__img-wrap img {
+  filter: none;
+}
+
+.living-item:hover .living-item__img-wrap img {
+  filter: none;
+}
+
+.living-strip {
+  border-top-color: rgba(0,0,0,.06);
+}
+
+/* ── Produktkarten (Übersicht) ── */
+.card,
+.bt-gridView .card {
+  background: #fff !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,.06) !important;
+}
+
+.card__kicker,
+.bt-gridView .card__kicker {
+  color: rgba(138,104,48,.85) !important;
+}
+
+.card__title,
+.bt-gridView .card__title {
+  color: rgba(10,8,6,.92) !important;
+}
+
+.card__price,
+.bt-gridView .card__price {
+  color: rgba(10,8,6,.85) !important;
+}
+
+.card__hint,
+.bt-gridView .card__hint {
+  color: rgba(10,8,6,.50) !important;
+}
+
+.card__meta,
+.bt-gridView .card__meta {
+  color: rgba(10,8,6,.55) !important;
+}
+
+.card:hover,
+.bt-gridView .card:hover {
+  border-color: rgba(138,104,48,.30) !important;
+}
+
+.card__media,
+.bt-gridView .card__media {
+  background: #f5f3f0 !important;
+}
+
+/* Stone Living Übersichtskarten */
+.sl-card {
+  background: #fff !important;
+  border-color: rgba(0,0,0,.08) !important;
+}
+
+.sl-card:hover {
+  background: #fff !important;
+  border-color: rgba(138,104,48,.30) !important;
+}
+
+.sl-card__title {
+  color: rgba(10,8,6,.92) !important;
+}
+
+.sl-card__sub {
+  color: rgba(10,8,6,.50) !important;
+}
+
+.sl__title {
+  color: rgba(10,8,6,.88) !important;
+}
+
+.sl__note p {
+  color: rgba(10,8,6,.45) !important;
+}
+
+/* Stone Living Unterseiten */
+.lk__title {
+  color: rgba(10,8,6,.92) !important;
+}
+
+.lk__sub {
+  color: rgba(10,8,6,.55) !important;
+}
+
+.wb__head .wb__title,
+.wb__head .wb__kicker,
+.bt__head .bt__title,
+.bt__head .bt__kicker {
+  color: rgba(10,8,6,.88) !important;
+}
+
+.wb-tabs__btn {
+  color: rgba(10,8,6,.62) !important;
+  border-color: rgba(0,0,0,.10) !important;
+  background: #fff !important;
+}
+
+.wb-tabs__btn.is-active {
+  color: rgba(10,8,6,.92) !important;
+  border-color: rgba(138,104,48,.35) !important;
+  background: rgba(138,104,48,.08) !important;
+}
+
+/* ── Produktdetail (Overlay + produkt.html) ── */
+.wb-detail {
+  background: #fafafa !important;
+  backdrop-filter: none !important;
+}
+
+.wb-detail__title,
+.wb-detail__kicker {
+  color: rgba(10,8,6,.90) !important;
+}
+
+.wb-product {
+  background: #fff !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,.06) !important;
+}
+
+.wb-mainImage {
+  background: #f5f3f0 !important;
+  border-color: rgba(0,0,0,.08) !important;
+}
+
+.wb-thumb {
+  background: #fff !important;
+  border-color: rgba(0,0,0,.10) !important;
+}
+
+.wb-buy {
+  background: #fff !important;
+  border-color: rgba(0,0,0,.08) !important;
+}
+
+.wb-price__label,
+.wb-inquiry__label {
+  color: rgba(10,8,6,.55) !important;
+}
+
+.wb-price__value {
+  color: rgba(10,8,6,.92) !important;
+}
+
+.wb-desc p {
+  color: rgba(10,8,6,.68) !important;
+}
+
+.wb-specs li {
+  background: #fafafa !important;
+  border-color: rgba(0,0,0,.08) !important;
+}
+
+.wb-specs li span:first-child {
+  color: rgba(10,8,6,.55) !important;
+}
+
+.wb-specs li span:last-child {
+  color: rgba(10,8,6,.88) !important;
+}
+
+.wb-field {
+  background: #fff !important;
+  border-color: rgba(0,0,0,.12) !important;
+  color: rgba(10,8,6,.90) !important;
+}
+
+.wb-field::placeholder {
+  color: rgba(10,8,6,.40) !important;
+}
+
+.wb-note {
+  color: rgba(10,8,6,.50) !important;
+}
+
+.wb-back {
+  border-color: rgba(0,0,0,.12) !important;
+  background: #fff !important;
+  color: rgba(10,8,6,.82) !important;
+}
+
+.wb-back:hover {
+  border-color: rgba(138,104,48,.35) !important;
+  background: rgba(138,104,48,.06) !important;
+  color: rgba(10,8,6,.92) !important;
+}
+
+.wb-price {
+  border-bottom-color: rgba(0,0,0,.08) !important;
+}
+
+.page--produkt {
+  background: #fafafa !important;
+  background-image: none !important;
+  color: rgba(10,8,6,.92) !important;
+}
+
+.produkt-loading,
+.produkt-error {
+  color: rgba(10,8,6,.45) !important;
+}
+
+/* ── Footer ── */
+.footer {
+  background: #f5f3f0 !important;
+  border-top-color: rgba(0,0,0,.08) !important;
+  color: rgba(10,8,6,.55) !important;
+}
+
+.footer__col-title {
+  color: rgba(10,8,6,.40) !important;
+}
+
+.footer__tagline,
+.footer__cta-text {
+  color: rgba(10,8,6,.50) !important;
+}
+
+.footer__contact-list a,
+.footer__nav-item {
+  color: rgba(10,8,6,.55) !important;
+}
+
+.footer__copy {
+  color: rgba(10,8,6,.40) !important;
+}
+
+.footer__grid {
+  border-bottom-color: rgba(0,0,0,.08) !important;
+}
+
+.footer__social-link {
+  border-color: rgba(0,0,0,.12) !important;
+  color: rgba(10,8,6,.50) !important;
+}
+
+.footer__legal a {
+  color: rgba(10,8,6,.45) !important;
+}
+
+/* ── Reviews Stone Living ── */
+.sl-reviews {
+  background: #f5f3f0 !important;
+  border-top-color: rgba(0,0,0,.08) !important;
+}
+
+.sl-reviews__title {
+  color: rgba(10,8,6,.88) !important;
+}
+
+.sl-review-card {
+  background: #fff !important;
+  border-color: rgba(0,0,0,.08) !important;
+}
+
+.sl-review-card__text {
+  color: rgba(10,8,6,.62) !important;
+}
+
+.sl-review-card__author span {
+  color: rgba(10,8,6,.40) !important;
+}
+
+.wb-reviews {
+  background: #f5f3f0 !important;
+  border-top-color: rgba(0,0,0,.08) !important;
+}
+
+.wb-reviews__title {
+  color: rgba(10,8,6,.88) !important;
+}
+
+.wb-review-card {
+  background: #fff !important;
+  border-color: rgba(0,0,0,.08) !important;
+}
+
+.wb-review-card__text {
+  color: rgba(10,8,6,.62) !important;
+}
+
+/* ── Popups ── */
+.bs-popup__card {
+  background: #fff !important;
+  border-color: rgba(0,0,0,.10) !important;
+}
+
+.bs-popup__title {
+  color: rgba(10,8,6,.92) !important;
+}
+
+.bs-popup__text {
+  color: rgba(10,8,6,.68) !important;
+}
+
+.bs-popup__close {
+  background: #fafafa !important;
+  border-color: rgba(0,0,0,.12) !important;
+  color: rgba(10,8,6,.82) !important;
+}
+
+/* ── Mobile Nav ── */
+.navDrawer {
+  background: rgba(255,255,255,.98) !important;
+  border-left-color: rgba(0,0,0,.08) !important;
+}
+
+.navDrawer__title {
+  color: rgba(10,8,6,.78) !important;
+}
+
+.navClose {
+  background: #fafafa !important;
+  border-color: rgba(0,0,0,.12) !important;
+  color: rgba(10,8,6,.88) !important;
+}
+
+.navMobile a {
+  background: #fafafa !important;
+  border-color: rgba(0,0,0,.08) !important;
+  color: rgba(10,8,6,.82) !important;
+}
+
+.navMobile a.is-active {
+  background: rgba(138,104,48,.08) !important;
+  border-color: rgba(138,104,48,.25) !important;
+}
+
+/* ── Badewannen Detail (bt-* Klassen) ── */
+.bt-detail {
+  background: #fafafa !important;
+  backdrop-filter: none !important;
+}
+
+.bt-back {
+  border-color: rgba(0,0,0,.12) !important;
+  background: #fff !important;
+  color: rgba(10,8,6,.82) !important;
+}
+
+#bTitle {
+  color: rgba(10,8,6,.92) !important;
+}
+
+.bt-product {
+  background: #fff !important;
+  border-color: rgba(0,0,0,.08) !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,.06) !important;
+}
+
+.bt-mainImage {
+  background: #f5f3f0 !important;
+  border-color: rgba(0,0,0,.08) !important;
+}
+
+.bt-buy {
+  background: #fff !important;
+  border-color: rgba(0,0,0,.08) !important;
+}
+
+.bt-price__label,
+.bt-inquiry__label {
+  color: rgba(10,8,6,.55) !important;
+}
+
+.bt-price__value {
+  color: rgba(10,8,6,.92) !important;
+}
+
+.bt-desc p {
+  color: rgba(10,8,6,.68) !important;
+}
+
+.bt-specs li {
+  background: #fafafa !important;
+  border-color: rgba(0,0,0,.08) !important;
+}
+
+.bt-specs li span:first-child {
+  color: rgba(10,8,6,.55) !important;
+}
+
+.bt-specs li span:last-child {
+  color: rgba(10,8,6,.88) !important;
+}
+
+.bt-field {
+  background: #fff !important;
+  border-color: rgba(0,0,0,.12) !important;
+  color: rgba(10,8,6,.90) !important;
+}
+
+.bt-field::placeholder {
+  color: rgba(10,8,6,.40) !important;
+}
+
+.bt-gridView .card__title {
+  color: rgba(10,8,6,.92) !important;
+}
+
+.bt-gridView .card__price {
+  color: rgba(10,8,6,.85) !important;
+}
+
+.bt-gridView .card__hint {
+  color: rgba(10,8,6,.50) !important;
+}
+
+.bt__title {
+  color: rgba(10,8,6,.90) !important;
+}
+
+.bt__sub {
+  color: rgba(10,8,6,.55) !important;
+}
+
+/* ── Announce Bar ── */
+.announce-bar {
+  background: #f5f3f0;
+  color: rgba(10,8,6,.65);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.announce-bar a {
+  color: var(--gold);
+}
