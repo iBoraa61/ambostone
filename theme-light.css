@@ -75,56 +75,43 @@ html { background: #fafafa; }
 }
 
 /* Unterseiten mit hellem Hintergrund: Header sofort dunkle Schrift */
-body:not(.page--home):not(.page--washbecken):not(.page--bad) .header--lusso .brand__wordmark {
+body:not(.page--home) .header--lusso .brand__wordmark {
   color: rgba(10,8,6,.88);
   text-shadow: none;
 }
 
-body:not(.page--home):not(.page--washbecken):not(.page--bad) .header--lusso .nav__link,
-body:not(.page--home):not(.page--washbecken):not(.page--bad) .header--lusso .hdr-search-btn,
-body:not(.page--home):not(.page--washbecken):not(.page--bad) .header--lusso .hdr-phone-inline,
-body:not(.page--home):not(.page--washbecken):not(.page--bad) .header--lusso .hdr-contact-link {
+body:not(.page--home) .header--lusso .nav__link,
+body:not(.page--home) .header--lusso .hdr-search-btn,
+body:not(.page--home) .header--lusso .hdr-phone-inline,
+body:not(.page--home) .header--lusso .hdr-contact-link {
   color: rgba(10,8,6,.78);
 }
 
-body:not(.page--home):not(.page--washbecken):not(.page--bad) .header--lusso .navToggle__lines,
-body:not(.page--home):not(.page--washbecken):not(.page--bad) .header--lusso .navToggle__lines::before,
-body:not(.page--home):not(.page--washbecken):not(.page--bad) .header--lusso .navToggle__lines::after {
+body:not(.page--home) .header--lusso .navToggle__lines,
+body:not(.page--home) .header--lusso .navToggle__lines::before,
+body:not(.page--home) .header--lusso .navToggle__lines::after {
   background: rgba(10,8,6,.82);
 }
 
-body:not(.page--home):not(.page--washbecken):not(.page--bad) .header--lusso .header__nav-bar {
+body:not(.page--home) .header--lusso .header__nav-bar {
   border-top-color: rgba(0,0,0,.08);
 }
 
-body:not(.page--home):not(.page--washbecken):not(.page--bad) .header--lusso .navPhone,
-body:not(.page--home):not(.page--washbecken):not(.page--bad) .header--lusso .navToggle {
+body:not(.page--home) .header--lusso .navPhone,
+body:not(.page--home) .header--lusso .navToggle {
   border-color: rgba(0,0,0,.12);
   background: rgba(0,0,0,.04);
   color: rgba(10,8,6,.88);
 }
 
-/* Waschbecken / Badewannen: helle Header-Schrift über Marmor */
-.page--washbecken .header--lusso:not(.is-scrolled) .brand__wordmark,
-.page--washbecken .header--lusso:not(.is-scrolled) .nav__link,
-.page--washbecken .header--lusso:not(.is-scrolled) .hdr-search-btn,
-.page--washbecken .header--lusso:not(.is-scrolled) .hdr-phone-inline,
-.page--washbecken .header--lusso:not(.is-scrolled) .hdr-contact-link,
-.page--bad .header--lusso:not(.is-scrolled) .brand__wordmark,
-.page--bad .header--lusso:not(.is-scrolled) .nav__link,
-.page--bad .header--lusso:not(.is-scrolled) .hdr-search-btn,
-.page--bad .header--lusso:not(.is-scrolled) .hdr-phone-inline,
-.page--bad .header--lusso:not(.is-scrolled) .hdr-contact-link {
-  color: rgba(255,255,255,.88) !important;
-}
-
-.page--washbecken .header--lusso:not(.is-scrolled) .navToggle__lines,
-.page--washbecken .header--lusso:not(.is-scrolled) .navToggle__lines::before,
-.page--washbecken .header--lusso:not(.is-scrolled) .navToggle__lines::after,
-.page--bad .header--lusso:not(.is-scrolled) .navToggle__lines,
-.page--bad .header--lusso:not(.is-scrolled) .navToggle__lines::before,
-.page--bad .header--lusso:not(.is-scrolled) .navToggle__lines::after {
-  background: rgba(255,255,255,.90) !important;
+/* Waschbecken / Badewannen: weißer Header auf Creme-Hintergrund */
+.page--washbecken .header--lusso,
+.page--bad .header--lusso {
+  background: rgba(255,255,255,.96) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid rgba(0,0,0,.08) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06) !important;
 }
 
 .page--washbecken .wb__title,
@@ -133,22 +120,33 @@ body:not(.page--home):not(.page--washbecken):not(.page--bad) .header--lusso .nav
 .page--bad .bt__title,
 .page--bad .bt__kicker,
 .page--bad .bt__sub {
-  color: rgba(255,255,255,.88) !important;
+  color: rgba(10,8,6,.88) !important;
 }
 
 .page--washbecken .wb-tabs__btn {
-  background: rgba(0,0,0,.22) !important;
-  border-color: rgba(255,255,255,.12) !important;
-  color: rgba(255,255,255,.72) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  color: rgba(10,8,6,.55) !important;
 }
 
 .page--washbecken .wb-tabs__btn.is-active {
-  color: rgba(255,255,255,.92) !important;
-  border-color: rgba(200,176,138,.35) !important;
-  background: rgba(200,176,138,.10) !important;
+  color: rgba(10,8,6,.92) !important;
+  border-color: rgba(138,104,48,.35) !important;
+  background: rgba(138,104,48,.08) !important;
 }
 
-/* ── Seiten-Hintergründe (ohne Waschbecken/Badewannen – dort Marmor-Hintergrund) ── */
+/* ── Seiten-Hintergründe ── */
+.page--washbecken,
+.page--bad {
+  background-color: #f5f3f0 !important;
+  background-image: none !important;
+}
+
+html:has(.page--washbecken),
+html:has(.page--bad) {
+  background: #f5f3f0;
+}
+
 .page--fliesen,
 .page--spiegel,
 .page--beistelltische,
@@ -531,6 +529,18 @@ html:has(.page--vasen) {
   color: rgba(10,8,6,.50) !important;
 }
 
+.wb-btn,
+.wb-btn--gold {
+  color: rgba(10,8,6,.90) !important;
+  border-color: rgba(138,104,48,.35) !important;
+  background: rgba(138,104,48,.10) !important;
+}
+
+.wb-btn--gold:hover {
+  border-color: rgba(138,104,48,.55) !important;
+  background: rgba(138,104,48,.16) !important;
+}
+
 .wb-back {
   border-color: rgba(0,0,0,.12) !important;
   background: #fff !important;
@@ -548,9 +558,27 @@ html:has(.page--vasen) {
 }
 
 .page--produkt {
-  background: #fafafa !important;
+  background: #f5f3f0 !important;
   background-image: none !important;
   color: rgba(10,8,6,.92) !important;
+}
+
+.page--produkt .header {
+  z-index: 500 !important;
+  background: rgba(255,255,255,.98) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,.08) !important;
+  border-bottom: 1px solid rgba(0,0,0,.06) !important;
+}
+
+.page--produkt .wb {
+  padding-top: 140px !important;
+}
+
+.page--produkt .wb-detail {
+  padding-top: 24px !important;
+  padding-bottom: 80px !important;
 }
 
 .produkt-loading,
@@ -635,6 +663,37 @@ html:has(.page--vasen) {
 
 .wb-review-card__text {
   color: rgba(10,8,6,.62) !important;
+}
+
+.wb-review-card__author span {
+  color: rgba(10,8,6,.45) !important;
+}
+
+/* Badewannen Referenzen – gleich wie Waschbecken */
+.bt-reviews {
+  background: #f5f3f0 !important;
+  border-top-color: rgba(0,0,0,.08) !important;
+}
+
+.bt-reviews__title {
+  color: rgba(10,8,6,.88) !important;
+}
+
+.bt-review-card {
+  background: #fff !important;
+  border-color: rgba(0,0,0,.08) !important;
+}
+
+.bt-review-card__text {
+  color: rgba(10,8,6,.62) !important;
+}
+
+.bt-review-card__author {
+  color: rgba(10,8,6,.55) !important;
+}
+
+.bt-review-card__author span {
+  color: rgba(10,8,6,.45) !important;
 }
 
 /* ── Popups ── */

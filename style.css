@@ -42,7 +42,7 @@ img{ max-width: 100%; display: block; }
 .header{
   position: fixed;
   inset: 0 0 auto 0;
-  z-index: 200;
+  z-index: 500;
   padding: 26px 0;
   pointer-events: none;
 }
@@ -656,8 +656,8 @@ img{ max-width: 100%; display: block; }
   background: #f5f3f0;
   border-top: 1px solid rgba(0,0,0,.08);
   padding: 64px 0 0;
-  color: rgba(10,8,6,.55);
-  font-size: 13px;
+  color: rgba(10,8,6,.58);
+  font-size: 15px;
   line-height: 1.75;
 }
 
@@ -672,7 +672,7 @@ img{ max-width: 100%; display: block; }
 /* Column shared */
 .footer__col-title{
   font-family: var(--serif);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .32em;
   text-transform: uppercase;
   color: rgba(10,8,6,.40);
@@ -682,7 +682,7 @@ img{ max-width: 100%; display: block; }
 /* Left — brand */
 .footer__wordmark{
   font-family: var(--serif);
-  font-size: 15px;
+  font-size: 17px;
   letter-spacing: .50em;
   text-transform: uppercase;
   color: rgba(200,176,138,.80);
@@ -690,8 +690,8 @@ img{ max-width: 100%; display: block; }
 }
 
 .footer__tagline{
-  color: rgba(10,8,6,.50);
-  font-size: 12.5px;
+  color: rgba(10,8,6,.55);
+  font-size: 14.5px;
   line-height: 1.65;
   margin: 0 0 22px;
   max-width: 240px;
@@ -705,7 +705,7 @@ img{ max-width: 100%; display: block; }
 }
 
 .footer__contact-list a{
-  font-size: 12.5px;
+  font-size: 14.5px;
   color: rgba(10,8,6,.55);
   transition: color .18s;
 }
@@ -752,7 +752,7 @@ img{ max-width: 100%; display: block; }
 }
 
 .footer__nav-item{
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(10,8,6,.55);
   transition: color .18s;
   letter-spacing: .04em;
@@ -764,8 +764,8 @@ img{ max-width: 100%; display: block; }
 
 /* Right — contact CTA */
 .footer__cta-text{
-  color: rgba(10,8,6,.50);
-  font-size: 12.5px;
+  color: rgba(10,8,6,.55);
+  font-size: 14.5px;
   line-height: 1.65;
   margin: 0 0 24px;
 }
@@ -775,7 +775,7 @@ img{ max-width: 100%; display: block; }
   border: 1px solid rgba(200,176,138,.40);
   color: rgba(200,176,138,.85);
   font-family: var(--serif);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .28em;
   text-transform: uppercase;
   padding: 11px 24px;
@@ -799,9 +799,9 @@ img{ max-width: 100%; display: block; }
 }
 
 .footer__copy{
-  font-size: 10.5px;
-  letter-spacing: .08em;
-  color: rgba(255,255,255,.18);
+  font-size: 13px;
+  letter-spacing: .06em;
+  color: rgba(10,8,6,.45);
 }
 
 .footer__legal{
@@ -810,9 +810,9 @@ img{ max-width: 100%; display: block; }
 }
 
 .footer__legal a{
-  font-size: 10.5px;
-  letter-spacing: .08em;
-  color: rgba(255,255,255,.18);
+  font-size: 13px;
+  letter-spacing: .06em;
+  color: rgba(10,8,6,.45);
   transition: color .18s;
 }
 
@@ -894,10 +894,58 @@ img{ max-width: 100%; display: block; }
    Header background NUR für Legal + Startseite 2
 ========================================================= */
 .page--legal .header{
-  background: rgba(7,7,7,.92);
+  background: rgba(255,255,255,.96);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: none;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+}
+
+/* Legal pages (Impressum, Datenschutz) */
+.legal-main{
+  min-height: 100vh;
+  padding-top: 168px;
+  padding-bottom: 72px;
+  background: #f5f3f0;
+}
+
+.legal-main h1{
+  font-family: var(--serif);
+  letter-spacing: .14em;
+  color: rgba(10,8,6,.92);
+  text-transform: uppercase;
+  font-size: clamp(24px, 2.8vw, 34px);
+  margin: 0 0 32px;
+}
+
+.legal-content{
+  max-width: 82ch;
+  color: rgba(10,8,6,.72);
+  line-height: 1.85;
+  font-size: 17px;
+}
+
+.legal-content h2{
+  font-family: var(--serif);
+  letter-spacing: .10em;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(10,8,6,.88);
+  margin: 36px 0 14px;
+}
+
+.legal-content p{
+  margin: 0 0 16px;
+}
+
+.legal-content a{
+  color: rgba(138,104,48,.92);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-content a:hover{
+  color: rgba(138,104,48,1);
 }
 
 .page--home2Active .header{
