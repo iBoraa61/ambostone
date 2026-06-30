@@ -625,9 +625,18 @@ html:has(.page--fliesen) {
   color: rgba(10,8,6,.45) !important;
 }
 
+.footer__bottom {
+  background: transparent !important;
+}
+
+.footer__bottom::before {
+  background: #ebe6de !important;
+  border-top-color: rgba(0,0,0,.06) !important;
+}
+
 /* ── Reviews Stone Living ── */
 .sl-reviews {
-  background: #ebe6de !important;
+  background: #f5f3f0 !important;
   border-top-color: rgba(0,0,0,.08) !important;
 }
 
@@ -649,7 +658,7 @@ html:has(.page--fliesen) {
 }
 
 .wb-reviews {
-  background: #ebe6de !important;
+  background: #f5f3f0 !important;
   border-top-color: rgba(0,0,0,.08) !important;
 }
 
@@ -672,7 +681,7 @@ html:has(.page--fliesen) {
 
 /* Badewannen Referenzen – gleich wie Waschbecken */
 .bt-reviews {
-  background: #ebe6de !important;
+  background: #f5f3f0 !important;
   border-top-color: rgba(0,0,0,.08) !important;
 }
 

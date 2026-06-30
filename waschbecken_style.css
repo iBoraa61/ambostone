@@ -595,7 +595,7 @@
 .wb-reviews{
   padding: 80px 0;
   border-top: 1px solid rgba(0,0,0,.08);
-  background: var(--cream-dark);
+  background: var(--cream);
 }
 .wb-reviews__head{
   text-align: center;
