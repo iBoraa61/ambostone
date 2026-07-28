@@ -64,7 +64,7 @@
   // Populate detail view
   // -------------------------
   function populateDetail(ds) {
-    document.title = 'AMBOSTONE – ' + (safeStr(ds.title) || 'Produkt');
+    document.title = 'BORASTONE – ' + (safeStr(ds.title) || 'Produkt');
 
     const setText = (id, val, fallback = '') => {
       const el = document.getElementById(id);
@@ -88,7 +88,7 @@
 
     // Form fields
     const subjectField = qs('#subjectField');
-    if (subjectField) subjectField.value = 'Anfrage – ' + (safeStr(ds.title) || 'AMBOSTONE');
+    if (subjectField) subjectField.value = 'Anfrage – ' + (safeStr(ds.title) || 'BORASTONE');
     const sourceField = qs('#sourceField');
     if (sourceField) sourceField.value = src + ' – ' + (safeStr(ds.title) || 'Produkt');
 
@@ -146,13 +146,13 @@
   // -------------------------
   function injectProductMeta(ds) {
     const title = safeStr(ds.title) || 'Produkt';
-    const desc  = safeStr(ds.desc)  || 'Hochwertiges Naturstein-Produkt von AMBOSTONE.';
+    const desc  = safeStr(ds.desc)  || 'Hochwertiges Naturstein-Produkt von BORASTONE.';
     const img   = safeStr(ds.main)  || '';
-    const pageUrl = 'https://ambostone.de/produkt.html' + location.search;
-    const imgUrl  = img.startsWith('http') ? img : (img ? 'https://ambostone.de/' + img : '');
+    const pageUrl = 'https://borastone.de/produkt.html' + location.search;
+    const imgUrl  = img.startsWith('http') ? img : (img ? 'https://borastone.de/' + img : '');
 
     // <title>
-    document.title = 'AMBOSTONE \u2013 ' + title;
+    document.title = 'BORASTONE \u2013 ' + title;
 
     // canonical
     const canonical = document.getElementById('canonicalTag');
@@ -160,7 +160,7 @@
 
     // og:title
     const ogTitle = document.getElementById('ogTitle');
-    if (ogTitle) ogTitle.setAttribute('content', 'AMBOSTONE \u2013 ' + title);
+    if (ogTitle) ogTitle.setAttribute('content', 'BORASTONE \u2013 ' + title);
 
     // og:description
     const ogDesc = document.getElementById('ogDesc');
@@ -195,8 +195,8 @@
     const priceRaw = safeStr(ds.price)   || '';
     const img      = safeStr(ds.main)    || '';
     const material = safeStr(ds.specMaterial || ds.material) || '';
-    const imgUrl   = img.startsWith('http') ? img : (img ? 'https://ambostone.de/' + img : '');
-    const pageUrl  = 'https://ambostone.de/produkt.html' + location.search;
+    const imgUrl   = img.startsWith('http') ? img : (img ? 'https://borastone.de/' + img : '');
+    const pageUrl  = 'https://borastone.de/produkt.html' + location.search;
 
     // Parse price string like "ab 750 \u20ac" or "1.200 \u20ac" \u2192 number
     const priceNum = priceRaw.replace(/[^0-9.,]/g, '').replace(',', '.').replace(/\.(?=.*\.)/g, '');
@@ -206,8 +206,8 @@
       '@context': 'https://schema.org',
       '@type': 'Product',
       'name': title,
-      'description': desc || ('Hochwertiges Naturstein-Produkt von AMBOSTONE: ' + title),
-      'brand': { '@type': 'Brand', 'name': 'AMBOSTONE' },
+      'description': desc || ('Hochwertiges Naturstein-Produkt von BORASTONE: ' + title),
+      'brand': { '@type': 'Brand', 'name': 'BORASTONE' },
       'url': pageUrl
     };
 
@@ -221,7 +221,7 @@
         'priceCurrency': 'EUR',
         'availability': 'https://schema.org/InStock',
         'url': pageUrl,
-        'seller': { '@type': 'Organization', 'name': 'AMBOSTONE' }
+        'seller': { '@type': 'Organization', 'name': 'BORASTONE' }
       };
     }
 

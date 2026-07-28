@@ -192,7 +192,7 @@ html:has(.page--fliesen) {
   border-bottom: 1px solid rgba(0,0,0,.08) !important;
 }
 
-/* Über AMBOSTONE: Header wieder dunkel über Marmor-Hintergrund */
+/* Über BORASTONE: Header wieder dunkel über Marmor-Hintergrund */
 .page--home2Active .header,
 .page--home2Active .header--lusso {
   background: rgba(7,7,7,.72) !important;
@@ -216,7 +216,7 @@ html:has(.page--fliesen) {
   background: rgba(255,255,255,.90) !important;
 }
 
-/* Über AMBOSTONE: auch beim Scrollen dunkler Header */
+/* Über BORASTONE: auch beim Scrollen dunkler Header */
 .page--home2Active .header--lusso.is-scrolled {
   background: rgba(7,7,7,.88) !important;
   backdrop-filter: blur(10px) !important;

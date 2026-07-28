@@ -1,4 +1,4 @@
-/* header.js – shared across all AMBOSTONE pages
+/* header.js – shared across all BORASTONE pages
    Handles: scroll darkening + announcement bar + search overlay
    Mobile nav is handled by each page's own JS (or inline script)
 */

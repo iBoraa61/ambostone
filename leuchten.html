@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AMBOSTONE – Naturstein Leuchten | Stone Living</title>
-  <meta name="description" content="Einzigartige Leuchten aus Naturstein und Marmor – Lichtdesign auf höchstem Niveau. AMBOSTONE Stone Living Kollektion.">
+  <title>BORASTONE – Naturstein Leuchten | Stone Living</title>
+  <meta name="description" content="Einzigartige Leuchten aus Naturstein und Marmor – Lichtdesign auf höchstem Niveau. BORASTONE Stone Living Kollektion.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://ambostone.de/leuchten.html">
+  <link rel="canonical" href="https://borastone.de/leuchten.html">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="AMBOSTONE">
-  <meta property="og:title" content="AMBOSTONE – Naturstein Leuchten | Stone Living">
+  <meta property="og:site_name" content="BORASTONE">
+  <meta property="og:title" content="BORASTONE – Naturstein Leuchten | Stone Living">
   <meta property="og:description" content="Einzigartige Leuchten aus Naturstein und Marmor – Lichtdesign auf höchstem Niveau.">
-  <meta property="og:url" content="https://ambostone.de/leuchten.html">
-  <meta property="og:image" content="https://ambostone.de/assets/images/bg/onyx_background4.png">
+  <meta property="og:url" content="https://borastone.de/leuchten.html">
+  <meta property="og:image" content="https://borastone.de/assets/images/bg/onyx_background4.png">
 
   <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="favicon.png">
@@ -143,8 +143,8 @@
         <a class="hdr-phone-inline" href="tel:+491743418313">+49 174 3418313</a>
       </div>
 
-      <a class="brand" href="index.html" aria-label="AMBOSTONE Startseite">
-        <span class="brand__wordmark">AMBOSTONE</span>
+      <a class="brand" href="index.html" aria-label="BORASTONE Startseite">
+        <span class="brand__wordmark">BORASTONE</span>
         <span class="brand__tagline">LUXURY STONE ATELIER</span>
       </a>
 
@@ -171,7 +171,7 @@
           <a class="nav__link" href="waschbecken.html">WASCHBECKEN</a>
           <a class="nav__link" href="bad.html">BADEWANNEN</a>
           <a class="nav__link is-active" href="fliesen.html">STONE LIVING</a>
-          <a class="nav__link" href="index.html#atelier">ÜBER AMBOSTONE</a>
+          <a class="nav__link" href="index.html#atelier">ÜBER BORASTONE</a>
         </nav>
       </div>
     </div>
@@ -187,7 +187,7 @@
           <a href="waschbecken.html">WASCHBECKEN</a>
           <a href="bad.html">BADEWANNEN</a>
           <a class="is-active" href="fliesen.html">STONE LIVING</a>
-          <a href="index.html#atelier">ÜBER AMBOSTONE</a>
+          <a href="index.html#atelier">ÜBER BORASTONE</a>
         </nav>
       </div>
     </div>
@@ -435,7 +435,7 @@
               <form class="wb-inquiry" id="inquiryForm"
                     action="https://formspree.io/f/xbdajpba"
                     method="POST">
-                <input type="hidden" name="_subject" id="subjectField" value="Anfrage – AMBOSTONE Leuchten">
+                <input type="hidden" name="_subject" id="subjectField" value="Anfrage – BORASTONE Leuchten">
                 <input type="hidden" name="source" value="Stone Living – Leuchten">
 
                 <label class="wb-inquiry__label" for="message">Nachricht</label>
@@ -460,7 +460,7 @@
   <!-- Popup -->
   <div class="bs-popup" id="bsPopup" hidden aria-live="polite">
     <div class="bs-popup__card" role="dialog" aria-modal="true">
-      <div class="bs-popup__kicker">AMBOSTONE</div>
+      <div class="bs-popup__kicker">BORASTONE</div>
       <h3 class="bs-popup__title">Danke für Ihre Anfrage</h3>
       <p class="bs-popup__text">Wir haben Ihre Nachricht erhalten und melden uns bald bei Ihnen.</p>
       <button class="bs-popup__close" type="button" id="bsPopupClose">Schließen</button>
@@ -498,7 +498,7 @@
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const productTitle = (document.getElementById('dTitle')?.textContent || '').trim();
-        if (subjectField) subjectField.value = productTitle ? `Anfrage: ${productTitle}` : 'Anfrage – Leuchten AMBOSTONE';
+        if (subjectField) subjectField.value = productTitle ? `Anfrage: ${productTitle}` : 'Anfrage – Leuchten BORASTONE';
         try {
           const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
           form.reset();
@@ -508,5 +508,7 @@
     })();
   </script>
 
+  <script src="analytics-config.js"></script>
+  <script src="analytics.js"></script>
 </body>
 </html>
