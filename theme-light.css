@@ -206,7 +206,8 @@ html:has(.page--fliesen) {
 .page--home2Active .header--lusso .nav__link,
 .page--home2Active .header--lusso .hdr-search-btn,
 .page--home2Active .header--lusso .hdr-phone-inline,
-.page--home2Active .header--lusso .hdr-contact-link {
+.page--home2Active .header--lusso .hdr-contact-link,
+.page--home2Active .header--lusso .navPhone {
   color: rgba(255,255,255,.88) !important;
 }
 
@@ -214,6 +215,13 @@ html:has(.page--fliesen) {
 .page--home2Active .header--lusso .navToggle__lines::before,
 .page--home2Active .header--lusso .navToggle__lines::after {
   background: rgba(255,255,255,.90) !important;
+}
+
+.page--home2Active .header--lusso .navPhone,
+.page--home2Active .header--lusso .navToggle {
+  border-color: rgba(255,255,255,.22) !important;
+  background: rgba(255,255,255,.08) !important;
+  color: rgba(255,255,255,.92) !important;
 }
 
 /* Über BORASTONE: auch beim Scrollen dunkler Header */
@@ -228,7 +236,8 @@ html:has(.page--fliesen) {
 .page--home2Active .header--lusso.is-scrolled .nav__link,
 .page--home2Active .header--lusso.is-scrolled .hdr-search-btn,
 .page--home2Active .header--lusso.is-scrolled .hdr-phone-inline,
-.page--home2Active .header--lusso.is-scrolled .hdr-contact-link {
+.page--home2Active .header--lusso.is-scrolled .hdr-contact-link,
+.page--home2Active .header--lusso.is-scrolled .navPhone {
   color: rgba(255,255,255,.88) !important;
 }
 
@@ -236,6 +245,13 @@ html:has(.page--fliesen) {
 .page--home2Active .header--lusso.is-scrolled .navToggle__lines::before,
 .page--home2Active .header--lusso.is-scrolled .navToggle__lines::after {
   background: rgba(255,255,255,.90) !important;
+}
+
+.page--home2Active .header--lusso.is-scrolled .navPhone,
+.page--home2Active .header--lusso.is-scrolled .navToggle {
+  border-color: rgba(255,255,255,.22) !important;
+  background: rgba(255,255,255,.08) !important;
+  color: rgba(255,255,255,.92) !important;
 }
 
 .feat-row + .feat-row {
@@ -728,30 +744,32 @@ html:has(.page--fliesen) {
 
 /* ── Mobile Nav ── */
 .navDrawer {
-  background: #ffffff !important;
-  border-left-color: rgba(0,0,0,.08) !important;
+  background: #faf8f5 !important;
+  border-left-color: rgba(138,104,48,.14) !important;
 }
 
 .navDrawer__title {
-  color: rgba(10,8,6,.78) !important;
+  color: var(--gold) !important;
 }
 
 .navClose {
-  background: #f5f3f0 !important;
-  border-color: rgba(0,0,0,.12) !important;
-  color: rgba(10,8,6,.88) !important;
+  background: transparent !important;
+  border: none !important;
+  color: rgba(10,8,6,.55) !important;
 }
 
 .navMobile a {
-  background: #f5f3f0 !important;
-  border-color: rgba(0,0,0,.08) !important;
-  color: rgba(10,8,6,.82) !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(10,8,6,.07) !important;
+  color: rgba(10,8,6,.78) !important;
 }
 
 .navMobile a.is-active {
-  background: #e8dfd0 !important;
-  border-color: rgba(138,104,48,.45) !important;
-  color: rgba(10,8,6,.92) !important;
+  background: rgba(138,104,48,.07) !important;
+  border-bottom-color: rgba(138,104,48,.2) !important;
+  color: var(--gold) !important;
+  box-shadow: inset 2px 0 0 var(--gold);
 }
 
 /* ── Badewannen Detail (bt-* Klassen) ── */

@@ -1106,9 +1106,9 @@ img{ max-width: 100%; display: block; }
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background: rgba(0,0,0,.62);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(18,16,14,.48);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: none;
   pointer-events: auto;
 }
@@ -1121,15 +1121,16 @@ img{ max-width: 100%; display: block; }
   top: 0;
   right: 0;
   height: 100%;
-  width: min(360px, 86vw);
-  background: rgba(7,7,7,.92);
-  border-left: 1px solid rgba(200,176,138,.14);
-  padding: 18px 18px 22px;
+  width: min(340px, 88vw);
+  background: #faf8f5;
+  border-left: 1px solid rgba(138,104,48,.14);
+  padding: 28px 22px 36px;
   transform: translateX(102%);
-  transition: transform .22s ease;
+  transition: transform .34s cubic-bezier(.22, 1, .36, 1);
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: 14px;
+  gap: 8px;
+  box-shadow: -24px 0 64px rgba(0,0,0,.14);
 }
 .navOverlay.is-open .navDrawer{ transform: translateX(0); }
 
@@ -1139,48 +1140,97 @@ img{ max-width: 100%; display: block; }
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  padding-bottom: 18px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(138,104,48,.16);
 }
 .navDrawer__title{
   font-family: var(--serif);
-  letter-spacing: .18em;
+  letter-spacing: .32em;
   text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(255,255,255,.80);
+  font-size: 11px;
+  color: var(--gold);
+  font-weight: 500;
 }
 .navClose{
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(0,0,0,.18);
-  color: rgba(255,255,255,.92);
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  color: rgba(10,8,6,.55);
+  font-size: 18px;
+  line-height: 1;
   cursor: pointer;
+  transition: color .2s ease, transform .2s ease;
+}
+.navClose:hover{
+  color: rgba(10,8,6,.92);
+  transform: rotate(90deg);
 }
 
 /* Links */
 .navMobile{
   display: grid;
-  gap: 10px;
-  padding-top: 6px;
+  gap: 0;
+  padding-top: 4px;
+  align-content: start;
 }
 .navMobile a{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.20);
+  padding: 18px 6px 18px 10px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(10,8,6,.07);
+  background: transparent;
   font-family: var(--serif);
-  letter-spacing: .18em;
+  letter-spacing: .2em;
   text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(255,255,255,.86);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(10,8,6,.78);
+  transition:
+    color .22s ease,
+    padding-left .22s ease,
+    background .22s ease,
+    box-shadow .22s ease;
+  position: relative;
+}
+.navMobile a::after{
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid rgba(10,8,6,.22);
+  border-bottom: 1px solid rgba(10,8,6,.22);
+  transform: rotate(-45deg);
+  opacity: .45;
+  flex-shrink: 0;
+  transition: opacity .22s ease, border-color .22s ease, transform .22s ease;
+}
+.navMobile a:hover,
+.navMobile a:focus-visible{
+  color: rgba(10,8,6,.95);
+  padding-left: 16px;
+  outline: none;
+}
+.navMobile a:hover::after,
+.navMobile a:focus-visible::after{
+  opacity: .85;
+  border-color: var(--gold);
+  transform: rotate(-45deg) translateX(2px);
 }
 .navMobile a.is-active{
-  border-color: rgba(200,176,138,.55);
-  background: #e8dfd0;
-  color: rgba(10,8,6,.92);
+  border-color: rgba(138,104,48,.2);
+  background: rgba(138,104,48,.07);
+  color: var(--gold);
+  box-shadow: inset 2px 0 0 var(--gold);
+  padding-left: 16px;
+}
+.navMobile a.is-active::after{
+  opacity: .9;
+  border-color: var(--gold);
 }
 
 /* --------- Mobile activation (<=980px) --------- */
@@ -1405,23 +1455,23 @@ img{ max-width: 100%; display: block; }
 
 @media (max-width: 640px) {
   .announce-bar {
-    height: 28px;
-    font-size: 7.5px;
-    letter-spacing: .02em;
-    gap: 3px;
-    padding: 0 6px;
+    height: 32px;
+    font-size: 9.5px;
+    letter-spacing: .06em;
+    gap: 5px;
+    padding: 0 10px;
   }
 
   .header--lusso {
-    top: 28px;
+    top: 32px;
   }
 }
 
 @media (max-width: 380px) {
   .announce-bar {
-    font-size: 6.5px;
-    letter-spacing: 0;
-    gap: 2px;
+    font-size: 8.5px;
+    letter-spacing: .03em;
+    gap: 4px;
   }
 }
 
