@@ -224,8 +224,8 @@ img{ max-width: 100%; display: block; }
     animation: reel-pan 36s linear infinite;
   }
   .hero__reel-track img{
-    width: 72vw;
-    flex-basis: 72vw;
+    width: 88vw;
+    flex-basis: 88vw;
   }
 }
 
