@@ -220,10 +220,10 @@ img{ max-width: 100%; display: block; }
 
 @media (max-width: 980px){
   .hero__reel-track{
-    animation-duration: 9s;
+    animation: reel-pan 5.5s linear infinite;
   }
   .hero__reel-track img{
-    min-width: 70vw;
+    min-width: 58vw;
   }
 }
 
