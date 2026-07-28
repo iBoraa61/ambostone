@@ -4,28 +4,7 @@
   const qs  = (sel, ctx = document) => ctx.querySelector(sel);
   const safeStr = (v) => (typeof v === 'string' ? v : '');
 
-  // ——— Mobile Nav ———
-  const toggle   = qs('.navToggle');
-  const overlay  = qs('.navOverlay');
-  const closeBtn = qs('#navClose');
-
-  function navOpen() {
-    if (!overlay) return;
-    overlay.hidden = false;
-    overlay.setAttribute('aria-hidden', 'false');
-    toggle?.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  }
-  function navClose() {
-    if (!overlay) return;
-    overlay.hidden = true;
-    overlay.setAttribute('aria-hidden', 'true');
-    toggle?.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-  toggle?.addEventListener('click', navOpen);
-  closeBtn?.addEventListener('click', navClose);
-  overlay?.addEventListener('click', (e) => { if (e.target === overlay) navClose(); });
+  // Mobile Nav: header.js
 
   // ——— Detail view refs ———
   const detail   = qs('.wb-detail');

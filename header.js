@@ -1,14 +1,70 @@
 /* header.js – shared across all BORASTONE pages
-   Handles: scroll darkening + announcement bar + search overlay
-   Mobile nav is handled by each page's own JS (or inline script)
+   Handles: mobile nav + scroll darkening + announcement bar + search overlay
 */
 
 // -------------------------
-// 1. Scroll: dark header + hide announcement bar
+// 0. Mobile Burger Menu (einheitlich wie Waschbecken/Badewannen)
+// -------------------------
+(() => {
+  const btn = document.querySelector('.navToggle');
+  const overlay = document.getElementById('navOverlay') || document.querySelector('.navOverlay');
+  const closeBtn = overlay?.querySelector('.navClose') || document.querySelector('.navClose');
+
+  if (!btn || !overlay) return;
+
+  // Overlay an body hängen, damit position:fixed immer viewport-füllend ist
+  // (Header mit backdrop-filter erzeugt sonst einen Containing Block)
+  if (overlay.parentElement !== document.body) {
+    document.body.appendChild(overlay);
+  }
+
+  const openNav = () => {
+    overlay.hidden = false;
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
+    btn.setAttribute('aria-expanded', 'true');
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeNav = () => {
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+    overlay.hidden = true;
+  };
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    overlay.classList.contains('is-open') ? closeNav() : openNav();
+  });
+
+  closeBtn?.addEventListener('click', closeNav);
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeNav();
+  });
+
+  overlay.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeNav));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeNav();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 980 && overlay.classList.contains('is-open')) closeNav();
+  });
+})();
+
+// -------------------------
+// 1. Scroll: dark header + hide announcement bar (+ home atelier)
 // -------------------------
 (() => {
   const header = document.getElementById('mainHeader');
   const bar    = document.getElementById('announceBar');
+  const atelier = document.getElementById('atelier');
   if (!header) return;
 
   let ticking = false;
@@ -21,12 +77,25 @@
       header.classList.remove('is-scrolled');
       bar?.classList.remove('announce-bar--hidden');
     }
+
+    if (atelier) {
+      const y = window.scrollY;
+      const start = atelier.offsetTop - 120;
+      const end = atelier.offsetTop + atelier.offsetHeight - 120;
+      document.body.classList.toggle('page--home2Active', y >= start && y < end);
+    }
+
     ticking = false;
   };
 
   window.addEventListener('scroll', () => {
     if (!ticking) { requestAnimationFrame(update); ticking = true; }
   }, { passive: true });
+
+  if (atelier) {
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  }
 })();
 
 // -------------------------

@@ -259,20 +259,6 @@
   </main>
 
   <script src="header.js"></script>
-  <script>
-    (function() {
-      var btn = document.querySelector('.navToggle');
-      var overlay = document.getElementById('navOverlay');
-      var closeBtn = document.getElementById('navClose');
-      if (!btn || !overlay) return;
-      function openNav() { overlay.classList.add('is-open'); overlay.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-      function closeNav() { overlay.classList.remove('is-open'); overlay.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
-      btn.addEventListener('click', function(){ overlay.classList.contains('is-open') ? closeNav() : openNav(); });
-      closeBtn && closeBtn.addEventListener('click', closeNav);
-      overlay.addEventListener('click', function(e){ if(e.target===overlay) closeNav(); });
-      document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeNav(); });
-    })();
-  </script>
   <script src="analytics-config.js"></script>
   <script src="analytics.js"></script>
 </body>

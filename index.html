@@ -233,7 +233,7 @@
       <div class="navDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
         <div class="navDrawer__top">
           <div class="navDrawer__title">Menü</div>
-          <button class="navClose" type="button" aria-label="Menü schließen">?</button>
+          <button class="navClose" type="button" aria-label="Menü schließen">✕</button>
         </div>
         <nav class="navMobile" aria-label="Mobile Navigation Links">
           <a class="is-active" href="index.html">STARTSEITE</a>
@@ -629,103 +629,15 @@
   </div>
 
   <!-- JS -->
+  <script src="header.js"></script>
   <script>
-    // -------------------------
-    // Mobile Nav
-    // -------------------------
-    (() => {
-      const qs = (s, el = document) => el.querySelector(s);
-      const qsa = (s, el = document) => [...el.querySelectorAll(s)];
-
-      const btn = qs('.navToggle');
-      const overlay = qs('#navOverlay');
-      const closeBtn = qs('.navClose', overlay || document);
-
-      if (!btn || !overlay) return;
-
-      const openNav = () => {
-        overlay.classList.add('is-open');
-        overlay.setAttribute('aria-hidden', 'false');
-        btn.setAttribute('aria-expanded', 'true');
-        document.documentElement.style.overflow = 'hidden';
-        document.body.style.overflow = 'hidden';
-      };
-
-      const closeNav = () => {
-        overlay.classList.remove('is-open');
-        overlay.setAttribute('aria-hidden', 'true');
-        btn.setAttribute('aria-expanded', 'false');
-        document.documentElement.style.overflow = '';
-        document.body.style.overflow = '';
-      };
-
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        overlay.classList.contains('is-open') ? closeNav() : openNav();
-      });
-
-      closeBtn?.addEventListener('click', closeNav);
-
-      overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) closeNav();
-      });
-
-      qsa('a', overlay).forEach((a) => a.addEventListener('click', closeNav));
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeNav();
-      });
-    })();
-
-    // -------------------------
-    // Scroll: header + hide announcement bar + home2 section styling
-    // -------------------------
-    (() => {
-      const header = document.getElementById('mainHeader');
-      const bar    = document.getElementById('announceBar');
-      const atelier = document.getElementById('atelier');
-      if (!header) return;
-
-      let ticking = false;
-
-      const update = () => {
-        const y = window.scrollY;
-        if (y > 60) {
-          header.classList.add('is-scrolled');
-          bar?.classList.add('announce-bar--hidden');
-        } else {
-          header.classList.remove('is-scrolled');
-          bar?.classList.remove('announce-bar--hidden');
-        }
-
-        if (atelier) {
-          const start = atelier.offsetTop - 120;
-          const end = atelier.offsetTop + atelier.offsetHeight - 120;
-          const inAtelier = y >= start && y < end;
-          document.body.classList.toggle('page--home2Active', inAtelier);
-        }
-
-        ticking = false;
-      };
-
-      window.addEventListener('scroll', () => {
-        if (!ticking) { requestAnimationFrame(update); ticking = true; }
-      }, { passive: true });
-      window.addEventListener('resize', update, { passive: true });
-      update();
-    })();
-
-    // -------------------------
     // Hero load animation
-    // -------------------------
     window.addEventListener('load', () => {
       const hero = document.querySelector('.hero__content');
       if (hero) hero.classList.add('is-animate');
     });
 
-    // -------------------------
-    // Scroll reveal (feat-rows, duo, living-strip)
-    // -------------------------
+    // Scroll reveal (feat-rows, living-strip)
     (() => {
       const els = document.querySelectorAll(
         '.feat-row[data-reveal], .living-strip[data-reveal]'
@@ -742,80 +654,7 @@
       els.forEach(r => obs.observe(r));
     })();
 
-    // -------------------------
-    // Product Search overlay
-    // -------------------------
-    (() => {
-      const PRODUCTS = [
-        { name: 'Standwaschbecken',        category: 'Waschbecken',   url: 'waschbecken.html' },
-        { name: 'Wandwaschbecken',         category: 'Waschbecken',   url: 'waschbecken.html#wand' },
-        { name: 'Freistehende Badewannen', category: 'Badewannen',    url: 'bad.html' },
-        { name: 'Beistelltische',          category: 'Stone Living',  url: 'beistelltische.html' },
-        { name: 'Leuchten',                category: 'Stone Living',  url: 'leuchten.html' },
-        { name: 'Spiegel',                 category: 'Stone Living',  url: 'spiegel.html' },
-        { name: 'Badregale',               category: 'Stone Living',  url: 'badregale.html' },
-        { name: 'Serviertabletts',         category: 'Stone Living',  url: 'serviertabletts.html' },
-        { name: 'Vasen',                   category: 'Stone Living',  url: 'vasen.html' },
-        { name: 'Marmor Waschbecken',      category: 'Waschbecken',   url: 'waschbecken.html' },
-        { name: 'Naturstein Badewanne',    category: 'Badewannen',    url: 'bad.html' },
-        { name: 'Stone Living Kollektion', category: 'Stone Living',  url: 'fliesen.html' },
-      ];
-
-      const overlay   = document.getElementById('searchOverlay');
-      const input     = document.getElementById('searchInput');
-      const results   = document.getElementById('searchResults');
-      const toggleBtn = document.getElementById('searchToggle');
-      const closeBtn  = document.getElementById('searchClose');
-
-      if (!overlay) return;
-
-      const openSearch = () => {
-        overlay.removeAttribute('hidden');
-        requestAnimationFrame(() => input?.focus());
-        document.documentElement.style.overflow = 'hidden';
-      };
-
-      const closeSearch = () => {
-        overlay.setAttribute('hidden', '');
-        if (input)   input.value = '';
-        if (results) results.innerHTML = '';
-        document.documentElement.style.overflow = '';
-      };
-
-      const render = (items) => {
-        if (!results) return;
-        if (!items.length) {
-          results.innerHTML = '<p class="search-empty">Keine Ergebnisse gefunden</p>';
-          return;
-        }
-        results.innerHTML = items.map(p =>
-          `<a class="search-result" href="${p.url}">
-            <span class="search-result__name">${p.name}</span>
-            <span class="search-result__cat">${p.category}</span>
-          </a>`
-        ).join('');
-      };
-
-      const doSearch = (q) => {
-        const lq = q.trim().toLowerCase();
-        if (!lq) { results.innerHTML = ''; return; }
-        render(PRODUCTS.filter(p =>
-          p.name.toLowerCase().includes(lq) || p.category.toLowerCase().includes(lq)
-        ));
-      };
-
-      toggleBtn?.addEventListener('click', openSearch);
-      closeBtn?.addEventListener('click', closeSearch);
-      overlay.addEventListener('click', (e) => { if (e.target === overlay) closeSearch(); });
-      input?.addEventListener('input', () => doSearch(input.value));
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !overlay.hasAttribute('hidden')) closeSearch();
-      });
-    })();
-
-    // -------------------------
     // Contact form popup
-    // -------------------------
     function showPopup(){
       const popup = document.getElementById('bsPopup');
       if (!popup) return;

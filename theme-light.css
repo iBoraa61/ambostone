@@ -728,7 +728,7 @@ html:has(.page--fliesen) {
 
 /* ── Mobile Nav ── */
 .navDrawer {
-  background: rgba(255,255,255,.98) !important;
+  background: #ffffff !important;
   border-left-color: rgba(0,0,0,.08) !important;
 }
 
@@ -737,20 +737,21 @@ html:has(.page--fliesen) {
 }
 
 .navClose {
-  background: #fafafa !important;
+  background: #f5f3f0 !important;
   border-color: rgba(0,0,0,.12) !important;
   color: rgba(10,8,6,.88) !important;
 }
 
 .navMobile a {
-  background: #fafafa !important;
+  background: #f5f3f0 !important;
   border-color: rgba(0,0,0,.08) !important;
   color: rgba(10,8,6,.82) !important;
 }
 
 .navMobile a.is-active {
-  background: rgba(138,104,48,.08) !important;
-  border-color: rgba(138,104,48,.25) !important;
+  background: #e8dfd0 !important;
+  border-color: rgba(138,104,48,.45) !important;
+  color: rgba(10,8,6,.92) !important;
 }
 
 /* ── Badewannen Detail (bt-* Klassen) ── */

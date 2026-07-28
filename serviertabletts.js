@@ -2,12 +2,7 @@
   'use strict';
   const qs = (sel, ctx = document) => ctx.querySelector(sel);
   const safeStr = (v) => (typeof v === 'string' ? v : '');
-  const toggle = qs('.navToggle'), overlay = qs('.navOverlay'), closeBtn = qs('#navClose');
-  function navOpen() { if (!overlay) return; overlay.hidden = false; overlay.setAttribute('aria-hidden','false'); toggle?.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-  function navClose() { if (!overlay) return; overlay.hidden = true; overlay.setAttribute('aria-hidden','true'); toggle?.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
-  toggle?.addEventListener('click', navOpen);
-  closeBtn?.addEventListener('click', navClose);
-  overlay?.addEventListener('click', (e) => { if (e.target === overlay) navClose(); });
+  // Mobile Nav: header.js
   const detail=qs('.wb-detail'), backBtn=qs('.wb-back'), dType=qs('#dType'), dTitle=qs('#dTitle'), dPrice=qs('#dPrice'), dDesc=qs('#dDesc'), dMain=qs('#dMain'), gallery=qs('#dGallery'), sMaterial=qs('#sMaterial'), sSize=qs('#sSize'), sFinish=qs('#sFinish'), sLead=qs('#sLead'), zoomBtn=qs('.wb-zoom'), zoomOverlay=qs('#zoomOverlay'), zoomImg=qs('#zoomImg'), zoomClose=qs('.wb-zoomOverlay__close');
   let lastActiveCard = null;
   function lockBody(lock) { document.body.style.overflow = lock ? 'hidden' : ''; }

@@ -286,38 +286,6 @@
   });
   popupClose?.addEventListener('click', () => { if (popup) popup.hidden = true; });
 
-  // -------------------------
-  // Mobile burger nav
-  // -------------------------
-  (() => {
-    const btn     = qs('.navToggle');
-    const overlay = qs('#navOverlay') || qs('.navOverlay');
-    const closeBtn = qs('.navClose', overlay || document);
-    if (!btn || !overlay) return;
-
-    const openNav = () => {
-      overlay.hidden = false;
-      overlay.classList.add('is-open');
-      overlay.setAttribute('aria-hidden', 'false');
-      btn.setAttribute('aria-expanded', 'true');
-      document.documentElement.style.overflow = 'hidden';
-      document.body.style.overflow = 'hidden';
-    };
-    const closeNav = () => {
-      overlay.classList.remove('is-open');
-      overlay.setAttribute('aria-hidden', 'true');
-      btn.setAttribute('aria-expanded', 'false');
-      document.documentElement.style.overflow = '';
-      document.body.style.overflow = '';
-      overlay.hidden = true;
-    };
-
-    btn.addEventListener('click', (e) => { e.preventDefault(); overlay.classList.contains('is-open') ? closeNav() : openNav(); });
-    closeBtn?.addEventListener('click', closeNav);
-    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeNav(); });
-    qsa('a', overlay).forEach(a => a.addEventListener('click', closeNav));
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeNav(); });
-    window.addEventListener('resize', () => { if (window.innerWidth > 980 && overlay.classList.contains('is-open')) closeNav(); });
-  })();
+  // Mobile Burger Menu: header.js
 
 })();

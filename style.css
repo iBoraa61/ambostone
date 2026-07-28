@@ -1113,6 +1113,7 @@ img{ max-width: 100%; display: block; }
   pointer-events: auto;
 }
 .navOverlay.is-open{ display: block; }
+.navOverlay[hidden]{ display: none !important; }
 
 /* Drawer */
 .navDrawer{
@@ -1177,8 +1178,9 @@ img{ max-width: 100%; display: block; }
   color: rgba(255,255,255,.86);
 }
 .navMobile a.is-active{
-  border-color: rgba(200,176,138,.35);
-  background: rgba(200,176,138,.10);
+  border-color: rgba(200,176,138,.55);
+  background: #e8dfd0;
+  color: rgba(10,8,6,.92);
 }
 
 /* --------- Mobile activation (<=980px) --------- */
@@ -1379,12 +1381,15 @@ img{ max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
   gap: 8px;
+  padding: 0 12px;
   background: #1e1c19;
   font-family: var(--serif);
   font-size: 11px;
   letter-spacing: .15em;
   text-transform: uppercase;
   color: rgba(255,255,255,.65);
+  white-space: nowrap;
+  overflow: hidden;
   transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .30s ease;
   pointer-events: auto;
 }
@@ -1396,6 +1401,28 @@ img{ max-width: 100%; display: block; }
 
 .announce-bar--hidden {
   transform: translateY(-100%);
+}
+
+@media (max-width: 640px) {
+  .announce-bar {
+    height: 28px;
+    font-size: 7.5px;
+    letter-spacing: .02em;
+    gap: 3px;
+    padding: 0 6px;
+  }
+
+  .header--lusso {
+    top: 28px;
+  }
+}
+
+@media (max-width: 380px) {
+  .announce-bar {
+    font-size: 6.5px;
+    letter-spacing: 0;
+    gap: 2px;
+  }
 }
 
 /* =========================================================

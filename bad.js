@@ -6,49 +6,7 @@
   const qsa = (s, el = document) => [...el.querySelectorAll(s)];
   const isTouch = matchMedia('(hover: none)').matches;
 
-  // -------------------------
-  // Mobile Burger Menu
-  // -------------------------
-  (() => {
-    const btn = qs('.navToggle');
-    const overlay = qs('.navOverlay');
-    const closeBtn = qs('.navClose', overlay || document);
-
-    if (!btn || !overlay) return;
-
-    const openNav = () => {
-      overlay.classList.add('is-open');
-      overlay.setAttribute('aria-hidden', 'false');
-      btn.setAttribute('aria-expanded', 'true');
-      document.documentElement.style.overflow = 'hidden';
-      document.body.style.overflow = 'hidden';
-    };
-
-    const closeNav = () => {
-      overlay.classList.remove('is-open');
-      overlay.setAttribute('aria-hidden', 'true');
-      btn.setAttribute('aria-expanded', 'false');
-      document.documentElement.style.overflow = '';
-      document.body.style.overflow = '';
-    };
-
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      overlay.classList.contains('is-open') ? closeNav() : openNav();
-    });
-
-    closeBtn?.addEventListener('click', closeNav);
-
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) closeNav();
-    });
-
-    qsa('a', overlay).forEach((a) => a.addEventListener('click', closeNav));
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeNav();
-    });
-  })();
+  // Mobile Burger Menu: header.js
 
   // -------------------------
   // Detail view
