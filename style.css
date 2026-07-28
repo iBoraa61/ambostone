@@ -221,11 +221,11 @@ img{ max-width: 100%; display: block; }
 
 @media (max-width: 980px){
   .hero__reel-track{
-    animation: reel-pan 36s linear infinite;
+    animation: reel-pan 58s linear infinite;
   }
   .hero__reel-track img{
-    width: 72vw;
-    flex-basis: 72vw;
+    width: 62vw;
+    flex-basis: 62vw;
   }
 }
 
