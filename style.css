@@ -218,6 +218,15 @@ img{ max-width: 100%; display: block; }
   to  { transform: translateX(-50%); }
 }
 
+@media (max-width: 980px){
+  .hero__reel-track{
+    animation-duration: 9s;
+  }
+  .hero__reel-track img{
+    min-width: 70vw;
+  }
+}
+
 @media (prefers-reduced-motion: reduce){
   .hero__reel-track{ animation-play-state: paused; }
 }
