@@ -200,16 +200,17 @@ img{ max-width: 100%; display: block; }
 .hero__reel-track{
   display: flex;
   height: 100%;
+  width: max-content;
   will-change: transform;
   animation: reel-pan 13s linear infinite;
 }
 
 .hero__reel-track img{
   height: 100%;
-  width: auto;
-  min-width: 45vw;
+  width: 42vw;
+  max-width: none;
   object-fit: cover;
-  flex-shrink: 0;
+  flex: 0 0 42vw;
   filter: brightness(.72) saturate(.85);
 }
 
@@ -223,7 +224,15 @@ img{ max-width: 100%; display: block; }
     animation: reel-pan 5.5s linear infinite;
   }
   .hero__reel-track img{
-    min-width: 58vw;
+    width: 78vw;
+    flex-basis: 78vw;
+  }
+}
+
+@media (min-width: 1600px){
+  .hero__reel-track img{
+    width: 32vw;
+    flex-basis: 32vw;
   }
 }
 
@@ -356,11 +365,6 @@ img{ max-width: 100%; display: block; }
   }
 
   .pager{ gap: 12px; }
-}
-
-/* Optional: ultrawide */
-@media (min-width: 1600px){
-  .hero__reel-track img{ min-width: 35vw; }
 }
 
 /* =========================================================
