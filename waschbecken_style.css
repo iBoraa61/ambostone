@@ -414,6 +414,9 @@
   color: rgba(10,8,6,.62);
   margin-bottom: 8px;
 }
+.wb-field + .wb-inquiry__label{
+  margin-top: 14px;
+}
 
 .wb-field{
   width: 100%;

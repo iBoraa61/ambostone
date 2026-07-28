@@ -401,6 +401,9 @@
   color: rgba(255,255,255,.70);
   margin-bottom: 8px;
 }
+.bt-field + .bt-inquiry__label{
+  margin-top: 14px;
+}
 
 .bt-field{
   width: 100%;
