@@ -202,7 +202,7 @@ img{ max-width: 100%; display: block; }
   height: 100%;
   width: max-content;
   will-change: transform;
-  animation: reel-pan 26s linear infinite;
+  animation: reel-pan 34s linear infinite;
 }
 
 .hero__reel-track img{
