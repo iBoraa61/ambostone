@@ -75,11 +75,37 @@
           <div class="navDrawer__title">Menü</div>
           <button class="navClose" id="navClose" type="button" aria-label="Menü schließen">✕</button>
         </div>
-        <nav class="navMobile" aria-label="Mobile Navigation Links">
+                <nav class="navMobile" aria-label="Mobile Navigation Links">
           <a href="index.html">STARTSEITE</a>
-          <a href="waschbecken.html">WASCHBECKEN</a>
+
+          <div class="navMobile__group">
+            <button type="button" class="navMobile__toggle" aria-expanded="false" aria-controls="navSubWash">
+              WASCHBECKEN
+            </button>
+            <div class="navMobile__sub" id="navSubWash" hidden>
+              <a href="waschbecken.html">Alle Waschbecken</a>
+              <a href="waschbecken.html#stand">Standwaschbecken</a>
+              <a href="waschbecken.html#wand">Wandwaschbecken</a>
+            </div>
+          </div>
+
           <a href="bad.html">BADEWANNEN</a>
-          <a href="fliesen.html">STONE LIVING</a>
+
+          <div class="navMobile__group">
+            <button type="button" class="navMobile__toggle" aria-expanded="false" aria-controls="navSubLiving">
+              STONE LIVING
+            </button>
+            <div class="navMobile__sub" id="navSubLiving" hidden>
+            <a href="fliesen.html">Übersicht</a>
+            <a href="beistelltische.html">Beistelltische</a>
+            <a href="spiegel.html">Spiegel</a>
+            <a href="badregale.html">Badregale</a>
+            <a href="serviertabletts.html">Serviertabletts</a>
+            <a href="leuchten.html">Leuchten</a>
+            <a href="vasen.html">Vasen</a>
+            </div>
+          </div>
+
           <a href="index.html#atelier">ÜBER BORASTONE</a>
         </nav>
       </div>

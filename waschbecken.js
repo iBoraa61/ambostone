@@ -30,9 +30,13 @@
     panels.forEach((p) => p.classList.toggle('is-active', p.dataset.panel === name));
   }
 
-  // Default: honour #hash (e.g. #wand from homepage link)
-  const hashTab = location.hash.replace('#', '');
-  setTab(hashTab === 'wand' ? 'wand' : 'stand');
+  // Default: honour #hash (e.g. #wand from menu / homepage)
+  const applyHashTab = () => {
+    const hashTab = location.hash.replace('#', '');
+    setTab(hashTab === 'wand' ? 'wand' : 'stand');
+  };
+  applyHashTab();
+  window.addEventListener('hashchange', applyHashTab);
 
   tabs.forEach((btn) => {
     btn.addEventListener('click', () => setTab(btn.dataset.tab));

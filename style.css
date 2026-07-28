@@ -1131,6 +1131,7 @@ img{ max-width: 100%; display: block; }
   grid-template-rows: auto 1fr;
   gap: 8px;
   box-shadow: -24px 0 64px rgba(0,0,0,.14);
+  overflow: hidden;
 }
 .navOverlay.is-open .navDrawer{ transform: translateX(0); }
 
@@ -1175,11 +1176,16 @@ img{ max-width: 100%; display: block; }
   gap: 0;
   padding-top: 4px;
   align-content: start;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 24px;
 }
-.navMobile a{
+.navMobile > a,
+.navMobile__toggle{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   padding: 18px 6px 18px 10px;
   border-radius: 0;
   border: none;
@@ -1191,6 +1197,8 @@ img{ max-width: 100%; display: block; }
   font-size: 13px;
   font-weight: 500;
   color: rgba(10,8,6,.78);
+  text-align: left;
+  cursor: pointer;
   transition:
     color .22s ease,
     padding-left .22s ease,
@@ -1198,7 +1206,7 @@ img{ max-width: 100%; display: block; }
     box-shadow .22s ease;
   position: relative;
 }
-.navMobile a::after{
+.navMobile > a::after{
   content: "";
   width: 6px;
   height: 6px;
@@ -1209,28 +1217,100 @@ img{ max-width: 100%; display: block; }
   flex-shrink: 0;
   transition: opacity .22s ease, border-color .22s ease, transform .22s ease;
 }
-.navMobile a:hover,
-.navMobile a:focus-visible{
+.navMobile__toggle::after{
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid rgba(10,8,6,.35);
+  border-bottom: 1.5px solid rgba(10,8,6,.35);
+  transform: rotate(45deg);
+  opacity: .7;
+  flex-shrink: 0;
+  margin-right: 4px;
+  transition: transform .28s ease, border-color .22s ease, opacity .22s ease;
+}
+.navMobile__group.is-open > .navMobile__toggle::after{
+  transform: rotate(-135deg);
+  border-color: var(--gold);
+  opacity: .95;
+}
+.navMobile > a:hover,
+.navMobile > a:focus-visible,
+.navMobile__toggle:hover,
+.navMobile__toggle:focus-visible{
   color: rgba(10,8,6,.95);
   padding-left: 16px;
   outline: none;
 }
-.navMobile a:hover::after,
-.navMobile a:focus-visible::after{
+.navMobile > a:hover::after,
+.navMobile > a:focus-visible::after{
   opacity: .85;
   border-color: var(--gold);
   transform: rotate(-45deg) translateX(2px);
 }
-.navMobile a.is-active{
+.navMobile > a.is-active,
+.navMobile__toggle.is-active{
   border-color: rgba(138,104,48,.2);
   background: rgba(138,104,48,.07);
   color: var(--gold);
   box-shadow: inset 2px 0 0 var(--gold);
   padding-left: 16px;
 }
-.navMobile a.is-active::after{
+.navMobile > a.is-active::after{
   opacity: .9;
   border-color: var(--gold);
+}
+.navMobile__toggle.is-active::after{
+  border-color: var(--gold);
+  opacity: .95;
+}
+
+/* Accordion groups */
+.navMobile__group{
+  border-bottom: 1px solid rgba(10,8,6,.07);
+}
+.navMobile__group > .navMobile__toggle{
+  border-bottom: none;
+}
+.navMobile__sub{
+  display: grid;
+  gap: 0;
+  padding: 0 0 10px 10px;
+  overflow: hidden;
+}
+.navMobile__sub[hidden]{
+  display: none !important;
+}
+.navMobile__sub a{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 8px 12px 14px;
+  border: none;
+  border-left: 1px solid rgba(138,104,48,.18);
+  background: transparent;
+  font-family: var(--serif-soft);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(10,8,6,.62);
+  transition: color .2s ease, padding-left .2s ease, background .2s ease;
+}
+.navMobile__sub a::after{
+  display: none;
+}
+.navMobile__sub a:hover,
+.navMobile__sub a:focus-visible{
+  color: rgba(10,8,6,.92);
+  padding-left: 20px;
+  outline: none;
+}
+.navMobile__sub a.is-active{
+  color: var(--gold);
+  background: rgba(138,104,48,.06);
+  box-shadow: none;
+  padding-left: 20px;
 }
 
 /* --------- Mobile activation (<=980px) --------- */

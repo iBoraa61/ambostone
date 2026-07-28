@@ -134,7 +134,7 @@
       z-index: 3000;
       display: none;
       place-items: center;
-      background: rgba(0,0,0,.55);
+      background: rgba(0,0,0,.45);
       backdrop-filter: blur(8px);
       padding: 20px;
     }
@@ -142,10 +142,10 @@
     .bs-popup__inner{
       width: min(520px, 92vw);
       border-radius: 18px;
-      border: 1px solid rgba(200,176,138,.25);
-      background: rgba(0,0,0,.70);
-      box-shadow: 0 28px 90px rgba(0,0,0,.55);
-      padding: 18px 18px 16px;
+      border: 1px solid rgba(0,0,0,.10);
+      background: #ffffff;
+      box-shadow: 0 24px 70px rgba(0,0,0,.18);
+      padding: 22px 20px 18px;
       text-align: center;
     }
     .bs-popup__title{
@@ -153,13 +153,34 @@
       letter-spacing: .12em;
       text-transform: uppercase;
       font-size: 16px;
-      color: rgba(255,255,255,.92);
+      color: rgba(10,8,6,.92);
       margin-bottom: 10px;
     }
     .bs-popup__text{
-      color: rgba(255,255,255,.75);
+      color: rgba(10,8,6,.68);
       font-size: 15px;
       line-height: 1.55;
+    }
+    .bs-popup__close{
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 10px 16px;
+      border: 1px solid rgba(0,0,0,.12);
+      background: #f5f3f0;
+      color: rgba(10,8,6,.82);
+      font-family: var(--serif);
+      letter-spacing: .18em;
+      font-size: 11px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .bs-popup__close:hover{
+      transform: translateY(-1px);
+      border-color: rgba(138,104,48,.35);
     }
   </style>
   <link rel="stylesheet" href="theme-light.css" />
@@ -235,11 +256,37 @@
           <div class="navDrawer__title">Menü</div>
           <button class="navClose" type="button" aria-label="Menü schließen">✕</button>
         </div>
-        <nav class="navMobile" aria-label="Mobile Navigation Links">
-          <a class="is-active" href="index.html">STARTSEITE</a>
-          <a href="waschbecken.html">WASCHBECKEN</a>
+                <nav class="navMobile" aria-label="Mobile Navigation Links">
+          <a href="index.html" class="is-active">STARTSEITE</a>
+
+          <div class="navMobile__group">
+            <button type="button" class="navMobile__toggle" aria-expanded="false" aria-controls="navSubWash">
+              WASCHBECKEN
+            </button>
+            <div class="navMobile__sub" id="navSubWash" hidden>
+              <a href="waschbecken.html">Alle Waschbecken</a>
+              <a href="waschbecken.html#stand">Standwaschbecken</a>
+              <a href="waschbecken.html#wand">Wandwaschbecken</a>
+            </div>
+          </div>
+
           <a href="bad.html">BADEWANNEN</a>
-          <a href="fliesen.html">STONE LIVING</a>
+
+          <div class="navMobile__group">
+            <button type="button" class="navMobile__toggle" aria-expanded="false" aria-controls="navSubLiving">
+              STONE LIVING
+            </button>
+            <div class="navMobile__sub" id="navSubLiving" hidden>
+            <a href="fliesen.html">Übersicht</a>
+            <a href="beistelltische.html">Beistelltische</a>
+            <a href="spiegel.html">Spiegel</a>
+            <a href="badregale.html">Badregale</a>
+            <a href="serviertabletts.html">Serviertabletts</a>
+            <a href="leuchten.html">Leuchten</a>
+            <a href="vasen.html">Vasen</a>
+            </div>
+          </div>
+
           <a href="index.html#atelier">ÜBER BORASTONE</a>
         </nav>
       </div>

@@ -49,6 +49,21 @@
 
   overlay.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeNav));
 
+  // Accordion: Waschbecken / Stone Living
+  overlay.querySelectorAll('.navMobile__toggle').forEach((toggle) => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const group = toggle.closest('.navMobile__group');
+      const panel = group?.querySelector('.navMobile__sub');
+      if (!group || !panel) return;
+
+      const willOpen = !group.classList.contains('is-open');
+      group.classList.toggle('is-open', willOpen);
+      toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      panel.hidden = !willOpen;
+    });
+  });
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeNav();
   });

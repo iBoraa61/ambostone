@@ -97,14 +97,14 @@
   </style>
 
   <style>
-    .bs-popup{ position: fixed; inset: 0; z-index: 5000; display: grid; place-items: center; padding: 24px; background: rgba(0,0,0,.62); backdrop-filter: blur(10px); }
+    .bs-popup{ position: fixed; inset: 0; z-index: 5000; display: grid; place-items: center; padding: 24px; background: rgba(0,0,0,.45); backdrop-filter: blur(10px); }
     .bs-popup[hidden]{ display: none; }
-    .bs-popup__card{ width: min(560px, 92vw); border-radius: 22px; border: 1px solid rgba(200,176,138,.22); background: rgba(0,0,0,.55); box-shadow: 0 30px 90px rgba(0,0,0,.55); padding: 22px 20px; text-align: center; }
-    .bs-popup__kicker{ font-family: var(--serif); letter-spacing: .22em; font-size: 11px; text-transform: uppercase; color: rgba(200,176,138,.92); margin-bottom: 10px; }
-    .bs-popup__title{ margin: 0 0 10px; font-family: var(--serif); font-weight: 500; letter-spacing: .08em; text-transform: uppercase; font-size: 18px; color: rgba(255,255,255,.92); }
-    .bs-popup__text{ margin: 0; color: rgba(255,255,255,.78); line-height: 1.65; font-size: 16px; }
-    .bs-popup__close{ margin-top: 16px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 10px 16px; border: 1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.18); color: rgba(255,255,255,.90); font-family: var(--serif); letter-spacing: .18em; font-size: 11px; text-transform: uppercase; cursor: pointer; transition: transform .18s ease, border-color .18s ease; }
-    .bs-popup__close:hover{ transform: translateY(-1px); border-color: rgba(200,176,138,.35); }
+    .bs-popup__card{ width: min(560px, 92vw); border-radius: 22px; border: 1px solid rgba(0,0,0,.10); background: #ffffff; box-shadow: 0 24px 70px rgba(0,0,0,.18); padding: 22px 20px; text-align: center; }
+    .bs-popup__kicker{ font-family: var(--serif); letter-spacing: .22em; font-size: 11px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .bs-popup__title{ margin: 0 0 10px; font-family: var(--serif); font-weight: 500; letter-spacing: .08em; text-transform: uppercase; font-size: 18px; color: rgba(10,8,6,.92); }
+    .bs-popup__text{ margin: 0; color: rgba(10,8,6,.68); line-height: 1.65; font-size: 16px; }
+    .bs-popup__close{ margin-top: 16px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 10px 16px; border: 1px solid rgba(0,0,0,.12); background: #f5f3f0; color: rgba(10,8,6,.82); font-family: var(--serif); letter-spacing: .18em; font-size: 11px; text-transform: uppercase; cursor: pointer; transition: transform .18s ease, border-color .18s ease; }
+    .bs-popup__close:hover{ transform: translateY(-1px); border-color: rgba(138,104,48,.35); }
   </style>
   <link rel="stylesheet" href="theme-light.css" />
 </head>
@@ -167,11 +167,37 @@
           <div class="navDrawer__title">Menü</div>
           <button class="navClose" id="navClose" type="button" aria-label="Menü schließen">✕</button>
         </div>
-        <nav class="navMobile" aria-label="Mobile Navigation Links">
+                <nav class="navMobile" aria-label="Mobile Navigation Links">
           <a href="index.html">STARTSEITE</a>
-          <a href="waschbecken.html">WASCHBECKEN</a>
+
+          <div class="navMobile__group">
+            <button type="button" class="navMobile__toggle" aria-expanded="false" aria-controls="navSubWash">
+              WASCHBECKEN
+            </button>
+            <div class="navMobile__sub" id="navSubWash" hidden>
+              <a href="waschbecken.html">Alle Waschbecken</a>
+              <a href="waschbecken.html#stand">Standwaschbecken</a>
+              <a href="waschbecken.html#wand">Wandwaschbecken</a>
+            </div>
+          </div>
+
           <a href="bad.html">BADEWANNEN</a>
-          <a class="is-active" href="fliesen.html">STONE LIVING</a>
+
+          <div class="navMobile__group is-open">
+            <button type="button" class="navMobile__toggle is-active" aria-expanded="true" aria-controls="navSubLiving">
+              STONE LIVING
+            </button>
+            <div class="navMobile__sub" id="navSubLiving">
+            <a href="fliesen.html">Übersicht</a>
+            <a href="beistelltische.html">Beistelltische</a>
+            <a href="spiegel.html" class="is-active">Spiegel</a>
+            <a href="badregale.html">Badregale</a>
+            <a href="serviertabletts.html">Serviertabletts</a>
+            <a href="leuchten.html">Leuchten</a>
+            <a href="vasen.html">Vasen</a>
+            </div>
+          </div>
+
           <a href="index.html#atelier">ÜBER BORASTONE</a>
         </nav>
       </div>
